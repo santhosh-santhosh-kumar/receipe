@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Header from './Header';
+import Meal from './Meal';
+import { Context } from './Context';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import YourList from './YourList';
+import AddReceipe from './AddReceipe';
+import Recent from './Recent';
+import Category from './Category';
+import Details from './Details';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<>
+<Context>
+<BrowserRouter>
+<Routes>
+  <Route path='/' element={<Header />}></Route>
+  <Route path='/Meal' element={<Meal />}></Route>
+  <Route path='/AddReceipe' element={<AddReceipe />}></Route>
+  <Route path='/Recent' element={<Recent />}></Route>
+  <Route path='/YourList' element={<YourList />}></Route>
+  <Route path='/category/:id' element={<Category />}></Route>
+  <Route path='/details/:id' element={<Details />}></Route>
+</Routes>
+</BrowserRouter>
+</Context>
+</>
   );
 }
 

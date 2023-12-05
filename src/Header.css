@@ -1,0 +1,40 @@
+.content::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+.content h1{
+    position: relative;
+    animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s;
+}
+.content h1:nth-child(1) {
+	animation-delay: 1s;
+}
+.content h1:nth-child(2) {
+	animation-delay: 2s;
+}
+
+.content h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: crimson;
+	animation: text_reveal_box 1s ease;
+	animation-delay: 0.5s;
+}
+.content h1:nth-child(1) span {
+	animation-delay: 0.5s;
+}
+.content h1:nth-child(2) span {
+	animation-delay: 1.5s;
+}
