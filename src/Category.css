@@ -10,7 +10,16 @@
 .card-img-top{
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
-
+    position: relative;
+}
+.fa-bookmark{
+    position: absolute;
+    left: 260px;
+    top: 17px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
 }
 .categoryArea{
     color: black;

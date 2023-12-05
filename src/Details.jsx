@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import './Details.css';
+import "./Details.css";
 
 function Details() {
   const ingredientsDetails = [];
@@ -12,27 +12,22 @@ function Details() {
   const [details, setDetails] = useState([]);
   const { id } = useParams();
   const [fetchError, setFetchError] = useState(null);
-  const [load,setLoad]=useState(true)
+  const [load, setLoad] = useState(true);
   useEffect(() => {
-    // axios
-    //   .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${id}`)
-    //   .then((res) => {
-    //     setDetails(res.data.meals);
-    //   })
-    //   .catch((err) => console.log(err.message));
-
     const fetchItems = async () => {
       try {
         const response = await axios.get(
           `https://www.themealdb.com/api/json/v1/1/search.php?s=${id}`
         );
-        if (response.data.meals==null) {throw Error("Items not found")};
+        if (response.data.meals == null) {
+          throw Error("Items not found");
+        }
         setDetails(response.data.meals);
         setFetchError(null);
       } catch (err) {
         setFetchError(err.message);
-      }finally{
-        setLoad(false)
+      } finally {
+        setLoad(false);
       }
     };
     fetchItems();
@@ -40,8 +35,8 @@ function Details() {
 
   return (
     <>
-              {load && <p>Loading...</p>}
-        {fetchError && <p>{fetchError}</p>}
+      {load && <p>Loading...</p>}
+      {fetchError && <p>{fetchError}</p>}
 
       {details.map((item) => {
         const instructArray = item.strInstructions;
@@ -52,13 +47,32 @@ function Details() {
             <div className="container navBarDetails">
               <div className="row">
                 <div className="col-3 navDetails">
-                 <ul>
-                  <li><Link to={'/Meal'}><i class="fa-solid fa-house"></i></Link></li>
-                  <li><i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></li>
-                  <li><Link style={{textDecoration: 'none'}} to={`/category/${item.strCategory}`}><h6 className="pageCategory">CATEGORY</h6></Link></li>
-                  <li><i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i></li>
-                  <li><h6 className="pageCategory">DETAILS</h6></li>
-                 </ul>
+                  <ul>
+                    <li>
+                      <Link to={"/Meal"}>
+                        <i class="fa-solid fa-house"></i>
+                      </Link>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-chevron-right"></i>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li>
+                      <Link
+                        style={{ textDecoration: "none" }}
+                        to={`/category/${item.strCategory}`}
+                      >
+                        <h6 className="pageCategory">CATEGORY</h6>
+                      </Link>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-chevron-right"></i>
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                    <li>
+                      <h6 className="pageCategory">DETAILS</h6>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -75,8 +89,10 @@ function Details() {
                 <div className="col-4">
                   <img
                     src={item.strMealThumb}
+                    class="card-img-top1"
                     style={{ width: "400px", height: "400px" }}
                   />
+                  <i class="fa-regular fa-bookmark fa-bookmark1"></i>
                 </div>
                 <div className="col-8">
                   <h3>{item.strMeal}</h3>

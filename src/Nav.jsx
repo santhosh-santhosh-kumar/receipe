@@ -29,7 +29,7 @@ function Nav() {
                 <li>
                   {" "}
                   <Link to={"/recent"} class="nav-link" href="#">
-                  <strong>Recently</strong>
+                  <strong>Saved</strong>
                   </Link>
                   </li>
                   <li>

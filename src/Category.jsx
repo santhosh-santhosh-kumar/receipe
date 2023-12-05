@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ContextProvide } from "./Context";
 import { useParams } from "react-router-dom";
-import "./App.css";
 import "./Category.css";
 
 function Category() {
@@ -66,6 +65,7 @@ function Category() {
                         class="card-img-top"
                         alt="..."
                         style={{height:"300px",width: "100%"}}/>
+                        <i class="fa-regular fa-bookmark"></i>
                       <div class="card-body">
                         <Link
                           style={{ textDecoration: "none" }}

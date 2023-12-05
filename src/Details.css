@@ -20,3 +20,17 @@
     width: 170px;
 
 }
+.card-img-top1{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    position: relative;
+}
+.fa-bookmark1{
+    position: absolute;
+    left: 460px;
+    top: 210px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 100%;
+    color: white;
+}
