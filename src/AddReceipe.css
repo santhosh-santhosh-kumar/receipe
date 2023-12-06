@@ -1,0 +1,41 @@
+.form-control{
+    width: 500px;
+    border: 1px solid black;
+}
+.ingrediant{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 15px;
+    margin-left: 50px;
+    width: 50%;
+    background-color: wheat;
+    padding: 10px;
+}
+.measure{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 15px;
+    width: 50%;
+    margin-left: 50px;
+    background-color: bisque;
+    padding: 10px;
+
+}
+.commends{
+    margin-left: 50px;
+}
+.combine{
+    display: flex;
+}
+.containerAdd{
+    background-color: whitesmoke;
+    
+}
+.col-form-label{
+    margin-left: 220px;
+}
+.addTextArea{
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
