@@ -79,7 +79,7 @@ function Category() {
                             <i class="fa-regular fa-star"></i>
                             </p>
                             <p className="categoryArea"><strong>Tasting the world, one dish at a time</strong></p>
-                          <p className="categoryCard">
+                            <p className="categoryCard">
                             {item.strMeal.length > 19
                               ? item.strMeal.slice(0, 19)
                               : item.strMeal}

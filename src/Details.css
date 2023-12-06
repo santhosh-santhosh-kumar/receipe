@@ -34,3 +34,12 @@
     border-radius: 100%;
     color: white;
 }
+.detailList1 ul{
+    list-style-type: none;
+}
+.detailList2 ul{
+    list-style-type: none;
+}
+.instruct ul{
+    list-style-type: none;
+}
