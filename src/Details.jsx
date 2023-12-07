@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Details.css";
+import AddItemDetails from "./AddItemDetails";
 
 function Details() {
   const ingredientsDetails = [];
@@ -36,12 +37,10 @@ function Details() {
   return (
     <>
       {load && <p>Loading...</p>}
-      {fetchError && <p>{fetchError}</p>}
-
-      {details.map((item) => {
+      {fetchError ? <AddItemDetails />:
+      details.map((item) => {
         const instructArray = item.strInstructions;
         let array = instructArray.split(".");
-
         return (
           <>
             <div className="container navBarDetails">

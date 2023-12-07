@@ -10,6 +10,7 @@ import AddReceipe from './AddReceipe';
 import Recent from './Recent';
 import Category from './Category';
 import Details from './Details';
+import UpdateItem from './UpdateItem';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
   <Route path='/YourList' element={<YourList />}></Route>
   <Route path='/category/:id' element={<Category />}></Route>
   <Route path='/details/:id' element={<Details />}></Route>
+  <Route path='/update/:id' element={<UpdateItem />}></Route>
 </Routes>
 </BrowserRouter>
 </Context>

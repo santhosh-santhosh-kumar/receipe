@@ -39,3 +39,16 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.addReceipeButton{
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px 30px 30px;
+    border-radius: 10px;
+    margin: 100px 0px 0px 150px;
+    height: 50px;
+    background-color: chocolate;
+}
+.bottom{
+    display: flex;
+}

@@ -1,0 +1,12 @@
+.containerYourList{
+ background-color: whitesmoke;
+}
+.delete{
+    background-color: rgba(210, 105, 30, 0.749) !important;
+    color: white;
+    text-align: center;
+    padding:5px 15px 5px 15px;
+    margin-left: 30px;
+    border-radius: 20px;
+    border: none;
+}
