@@ -1,40 +1,41 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import NewItem from "./NewItem.jsx";
-import "./Category.css";
+import { useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-
-function Category() {
-  const { id } = useParams();
-  const [fetchError, setFetchError] = useState(null);
-  const [load, setLoad] = useState(true);
-  const [category, setCategory] = useState([]);
-  useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`
-        );
-        if (response.data.meals == null) {
-          throw Error("Items not found");
+function Saved() {
+    const [details, setDetails] = useState([]);
+    const { id } = useParams();
+    const array=[]
+    const [fetchError, setFetchError] = useState(null);
+    const [load, setLoad] = useState(true);
+    useEffect(() => {
+      const fetchItems = async () => {
+        try {
+          const response = await axios.get(
+            `https://www.themealdb.com/api/json/v1/1/search.php?s=${id}`
+          );
+          if (response.data.meals == null) {
+            throw Error("Items not found");
+          }
+          setDetails(response.data.meals);
+          array.push(...response.data.meals)
+          console.log(array)
+          setFetchError(null);
+        } catch (err) {
+          setFetchError(err.message);
+        } finally {
+          setLoad(false);
         }
-        setCategory(response.data.meals);
-        setFetchError(null);
-      } catch (err) {
-        setFetchError(err.message);
-      } finally {
-        setLoad(false);
-      }
-    };
-    fetchItems();
-}, []);
+      };
+      fetchItems();
+    }, []);
+  
+
   return (
     <>
-      <div className="navDetails">
+          <div className="navDetails">
         <ul>
           <li>
             <Link to={"/Meal"}>
@@ -56,7 +57,8 @@ function Category() {
         <div className="row categoryRow">
           {load && <p>Loading...</p>}
           {fetchError && <p>{fetchError}</p>}
-          {category.map((item) => {
+          {array.map((item) => {
+            console.log(item)
             return (
               <div className="col-3 categoryCol">
                 <div
@@ -71,7 +73,7 @@ function Category() {
                   />
                   <Link
                       style={{ textDecoration: "none" }}
-                      to={`/saved`}  key={item.strMeal}
+                      to={`/saved/${item.strMeal}`}
                     >
                   <i class="fa-regular fa-bookmark"></i>
                   </Link>
@@ -101,11 +103,11 @@ function Category() {
               </div>
             );
           })}
-          <NewItem></NewItem>
         </div>
       </div>
+
     </>
-  );
+  )
 }
 
-export default Category;
+export default Saved

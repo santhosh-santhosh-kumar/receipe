@@ -3,9 +3,13 @@ import "./AddReceipe.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { ContextProvide } from "./Context";
+import LoginPage from "./LoginPage";
 
 function AddReceipe() {
   const nav = useNavigate();
+  const [item, setItem,login,setLogin] = useContext(ContextProvide);  
   const [inputData, setInputData] = useState({
     category: "",
     mealName: "",
@@ -57,18 +61,18 @@ function AddReceipe() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(inputData);
+    console.log("input",inputData);
     alert("Items posted succesfully");
-    axios.post("http://localhost:3501/addItems", inputData);
-    nav("/Meal");
+    axios.post("https://6557461abd4bcef8b6125cf6.mockapi.io/practice", inputData);
+    nav(`/category/${inputData.category}`);
   };
 
   return (
-    <>
-      <div className="container containerAdd">
+    <>{login ?<div className="container containerAdd">
         <div className="row">
           <div className="col-12">
-            <div className="title">Receipe Card</div>
+            <div className="title">
+              <h4>Receipe Card</h4></div>
             <hr></hr>
             <form onSubmit={handleSubmit}>
               <div class="form-group row">
@@ -571,6 +575,7 @@ function AddReceipe() {
           </div>
         </div>
       </div>
+      :<LoginPage />}
     </>
   );
 }

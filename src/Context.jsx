@@ -5,10 +5,12 @@ import axios from 'axios';
 export const ContextProvide=createContext()
 
 export function Context(props) {
+  const profile=[]
   const [item,setItem]=useState([])
   const [category,setCategory]=useState([])
   const [fetchError, setFetchError] = useState(null);
   const [load,setLoad]=useState(true)
+  const [login,setLogin]=useState(false)
   useEffect(()=>{
     const fetchItems = async () => {
       try {
@@ -31,7 +33,7 @@ export function Context(props) {
 
   return (
     <>
-    <ContextProvide.Provider value={[item,setItem]} value1={[category,setCategory]}>
+    <ContextProvide.Provider value={[item,setItem,login,setLogin,profile]}>
       {props.children}
     </ContextProvide.Provider>
     </>

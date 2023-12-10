@@ -1,0 +1,9 @@
+.profileImg img{
+    width: 400px !important;
+    height: 400px !important;
+}
+.profileContent .fa-user{
+    padding: 30px;
+    font-size: 80px;
+    border-radius: 100%;
+}

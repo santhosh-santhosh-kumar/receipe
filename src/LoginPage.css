@@ -1,0 +1,14 @@
+.loginMain{
+    border: 2px solid black;
+    margin: 00px;
+}
+.page{
+    display: flex;
+    justify-content: center;
+}
+.page h5{
+  margin-right: 30px;
+}
+.pages{
+    margin-left: 50px;
+}

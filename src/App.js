@@ -7,10 +7,12 @@ import { Context } from './Context';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import YourList from './YourList';
 import AddReceipe from './AddReceipe';
-import Recent from './Recent';
 import Category from './Category';
 import Details from './Details';
 import UpdateItem from './UpdateItem';
+import Saved from './Saved';
+import LoginPage from './LoginPage';
+import Profile from './Profile';
 
 function App() {
   return (
@@ -21,11 +23,13 @@ function App() {
   <Route path='/' element={<Header />}></Route>
   <Route path='/Meal' element={<Meal />}></Route>
   <Route path='/AddReceipe' element={<AddReceipe />}></Route>
-  <Route path='/Recent' element={<Recent />}></Route>
+  <Route path='/login' element={<LoginPage />}></Route>
   <Route path='/YourList' element={<YourList />}></Route>
   <Route path='/category/:id' element={<Category />}></Route>
   <Route path='/details/:id' element={<Details />}></Route>
   <Route path='/update/:id' element={<UpdateItem />}></Route>
+  <Route path='/saved' element={<Saved />}></Route>
+  <Route path='/Profile' element={<Profile />}></Route>
 </Routes>
 </BrowserRouter>
 </Context>

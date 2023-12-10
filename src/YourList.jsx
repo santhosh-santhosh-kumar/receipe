@@ -6,9 +6,11 @@ import { ContextProvide } from "./Context";
 import { useParams } from "react-router-dom";
 import "./Category.css";
 import "./YourList.css";
-import { useRef } from "react";
+import LoginPage from "./LoginPage";
+
 
 function YourList() {
+  const [item, setItem,login,setLogin] = useContext(ContextProvide);
   const { id } = useParams();
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
@@ -18,7 +20,7 @@ function YourList() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get("http://localhost:3501/addItems");
+        const response = await axios.get("https://6557461abd4bcef8b6125cf6.mockapi.io/practice");
         if (response.data == null) {
           throw Error("Items not found");
         }
@@ -35,7 +37,7 @@ function YourList() {
   const handleDelete = (id) => {
     console.log(id);
     axios
-      .delete("http://localhost:3501/addItems/" + id)
+      .delete("https://6557461abd4bcef8b6125cf6.mockapi.io/practice/" + id)
       .then((res) => {
         console.log(res.data);
       })
@@ -44,7 +46,7 @@ function YourList() {
 
   return (
     <>
-    <div className="container navBarDetails">
+    {login ? <><div className="container navBarDetails">
               <div className="row">
                 <div className="col-3 navDetails">
                   <ul>
@@ -70,14 +72,13 @@ function YourList() {
                       <i class="fa-solid fa-chevron-right"></i>
                     </li>
                     <li>
-                      <h6 className="pageCategory">YourList</h6>
+                      <h6 className="pageCategory">YOURLIST</h6>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-
-      <div className="container containerYourList">
+     <div className="container containerYourList">
         <div className="row">
           {newItem.map((item) => {
             console.log(item);
@@ -109,7 +110,7 @@ function YourList() {
                       style={{ textDecoration: "none" }}
                       to={`/update/${item.id}`}
                     >
-                      <span className="categoryCard">Edit</span>
+                      <span className="categoryCard categoryEdit">Edit</span>
                     </Link>
                     <span>
                     <button
@@ -125,7 +126,7 @@ function YourList() {
                       style={{ textDecoration: "none" }}
                       to={`/details/${item.mealName}`}
                     >
-                      <span className="categoryCard">View</span>
+                      <span className="categoryCard categoryEdit">View</span>
                     </Link>
                   </div>
                 </div>
@@ -134,7 +135,8 @@ function YourList() {
           })}
         </div>
       </div>
-    </>
+      </>: <LoginPage />}
+      </>
   );
 }
 

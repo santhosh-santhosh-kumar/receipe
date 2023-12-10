@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./Update.css";
+
 function UpdateItem() {
     const nav = useNavigate();
     const [inputData, setInputData] = useState({
@@ -62,8 +64,7 @@ function UpdateItem() {
     useEffect(() => {
         const fetchItems = async () => {
           try {
-            const response = await axios.get('http://localhost:3501/addItems/'+id);
-            console.log(response.data)
+            const response = await axios.get('https://6557461abd4bcef8b6125cf6.mockapi.io/practice/'+id);
             if (response.data == null) {
               throw Error("Items not found");
             }
@@ -81,7 +82,7 @@ function UpdateItem() {
       const handleSubmit=(event)=>{
         event.preventDefault();
         console.log('submit')
-        axios.put('http://localhost:3501/addItems/'+id,inputData)
+        axios.put('https://6557461abd4bcef8b6125cf6.mockapi.io/practice/'+id,inputData)
         nav('/yourlist')
     
       }
@@ -113,17 +114,19 @@ function UpdateItem() {
                       <i class="fa-solid fa-chevron-right"></i>
                     </li>
                     <li>
-                      <h6 className="pageCategory">YourList</h6>
+                      <h6 className="pageCategory">UPDATE</h6>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-          <div className="container containerAdd">
+          <div className="container containerupdate">
         <div className="row">
           <div className="col-12">
-            <div className="title">Receipe Card</div>
+            <div className="title">
+                <h4 className="ReceipeCard">Receipe Card</h4>
+                </div>
             <hr></hr>
             <form onSubmit={handleSubmit}>
            

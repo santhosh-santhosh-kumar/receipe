@@ -17,7 +17,7 @@ function AddItemDetails() {
       const fetchItems = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3501/addItems`
+            `https://6557461abd4bcef8b6125cf6.mockapi.io/practice`
           );
           if (response.data == null) {
             throw Error("Items not found");
@@ -35,7 +35,7 @@ function AddItemDetails() {
       
   return (
     <>
-          {load && <p>Loading...</p>}
+    {load && <p>Loading...</p>}
       {fetchError ? <p>{fetchError}</p>:
       details.map((item) => {
         const instructArray = item.strInstructions;

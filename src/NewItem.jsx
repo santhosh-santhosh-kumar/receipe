@@ -14,7 +14,7 @@ function NewItem() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get(`http://localhost:3501/addItems`);
+        const response = await axios.get(`https://6557461abd4bcef8b6125cf6.mockapi.io/practice`);
         if (response.data==null){
             throw Error("Items not found")
         }

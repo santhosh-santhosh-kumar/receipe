@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ContextProvide } from "./Context";
+import Profile from "./Profile";
 
 function Nav() {
+  const [item, setItem,login,setLogin] = useContext(ContextProvide);
+  
   return (
     <>
       <div className="navBar">
@@ -33,12 +38,10 @@ function Nav() {
                   </Link>
                   </li>
                   <li>
-                  <Link to={"/login"} class="nav-link" href="#">
-                  <strong>Login/Register</strong>
+                    {}
+                  <Link to={`/${login ? "Profile" : "login"}`} class="nav-link">
+                  <strong><i class="fa-solid fa-user"></i></strong>
                   </Link>
-
-                
- 
                 </li>
               </div>
             </div>

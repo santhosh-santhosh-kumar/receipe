@@ -52,3 +52,10 @@
 .bottom{
     display: flex;
 }
+hr{
+    color: chocolate;
+    height: 25px;
+}
+.containerAdd{
+    padding-bottom: 30px;
+}
