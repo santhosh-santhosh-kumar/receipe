@@ -3,13 +3,13 @@
     border: 1px solid black;
 }
 .ingrediant{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 15px;
     margin-left: 50px;
     width: 50%;
     background-color: wheat;
-    padding: 10px;
+    padding: 10px; */
 }
 .measure{
     display: grid;
@@ -58,4 +58,9 @@ hr{
 }
 .containerAdd{
     padding-bottom: 30px;
+}
+.IngrediantsButton{
+    background-color: chocolate;
+    padding: 0px 5px 0px 5px;
+    
 }

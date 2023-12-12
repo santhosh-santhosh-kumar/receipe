@@ -9,21 +9,21 @@ function Meallist() {
   return (
     <>
       <div className="container homeContainer">
-      <h4 className="homeCategory">CATEGORIES</h4>
         <div className="row">
           {item.map((item) => {
             return (
               <div className="col-3">
+                                  <Link style={{textDecoration: 'none'}} to={`/category/${item.strCategory}`} >
+
                 <div class="card mealCard" style={{ width: "20rem;" }}>
                   <img src={item.strCategoryThumb} class="card-img-top" alt="..." />
                   <div class="card-body">
-                  <Link style={{textDecoration: 'none'}} to={`/category/${item.strCategory}`} >
-                    <p class="card-title mealCardTitle">{item.strCategory}</p></Link>
-
+                    <p class="card-title mealCardTitle">{item.strCategory}</p>
                   </div>
                 </div>
+                </Link>
+
               </div>
-              
             );
           })}
         </div>

@@ -4,11 +4,16 @@ import axios from "axios";
 import { useContext } from "react";
 import { ContextProvide } from "./Context";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Profile() {
+  const nav=useNavigate()
     const [user,setUser]=useState([])
-    const [item, setItem,login,setLogin,profile] = useContext(ContextProvide);
-    console.log(profile)    
+    let [item, setItem,login,setLogin] = useContext(ContextProvide);
+    const handleClick=()=>{
+      setLogin(false)
+      nav("/Meal")
+    }
       return (
     <>
       <div className="container containerProfile">
@@ -22,15 +27,7 @@ function Profile() {
                 <div className="profileContent">
                  <h1><i class="fa-solid fa-user"></i></h1>
                  <h4>Member Login</h4>
-                 {profile.map((item)=>{
-                    console.log(item)
-                    return (
-                        <>
-                        <h4>item</h4>
-                        <h4>sfdsf</h4>
-                        </>
-                    )
-                 })}
+                 <span onClick={handleClick}>Logout</span>
                 </div>
                 <p></p>
             </div>
@@ -39,5 +36,4 @@ function Profile() {
     </>
   );
 }
-
 export default Profile;

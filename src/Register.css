@@ -1,0 +1,41 @@
+.mainRegister{
+    margin: 00px;
+    height: 100vh;
+    background-image: url("./assets/wallpaperflare.com_wallpaper\ \(2\).jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.registerDetails{
+    width: 800px;
+}
+.registerDetails input{
+    width: 340px;
+    height: 47px;
+    border-radius: 10px;
+    margin: 20px 10px 0px 20px;
+}
+.register{
+    padding: 70px 0px 0px 150px;
+}
+.registerButton{
+    margin-left: 340px;
+    margin-top: 50px;
+    border: none !important;
+    padding: 12px 30px 12px 30px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: chocolate;
+}
+.registerDetails span{
+    margin-left: 5px;
+    color: rgb(163, 92, 42) !important;
+}
+.register .page{
+    margin-left: 250px;
+}
+.register .page p{
+margin-left: 130px;    
+}

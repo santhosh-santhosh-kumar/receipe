@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { ContextProvide } from "./Context";
 import { useParams } from "react-router-dom";
 import "./Category.css";
+import "./NewItem.css";
 
 function NewItem() {
   const { id } = useParams();
@@ -30,23 +31,21 @@ function NewItem() {
   }, []);
   return (
     <>
-    
             {
-                
                 newItem.map((item) => {
                     if(item.category.toLowerCase()==id.toLowerCase()){
                 return (
-                  <div className="col-3 categoryCol">
+                  <div className="col-2 categoryCol newItemCol">
                     <div
                       class="card"
-                      style={{ width: "1rem !important;", height: "27.5rem"}}
+                      style={{ width: "1rem !important;", height: "18.5rem"}}
                     >
                       <img
                         src={item.imageUrl}
                         class="card-img-top"
                         alt="..."
-                        style={{height:"300px",width: "100%"}}/>
-                        <i class="fa-regular fa-bookmark"></i>
+                        style={{height:"190px",width: "100%"}}/>
+                       <i class="fa-solid fa-user new-user"></i>
                       <div class="card-body">
                         <Link
                           style={{ textDecoration: "none" }}
@@ -59,7 +58,6 @@ function NewItem() {
                           <i class="fa-regular fa-star"></i>
                           <i class="fa-regular fa-star"></i>
                         </p>
-                            <p className="categoryArea"><strong>Tasting the world, one dish at a time</strong></p>
                             <p className="categoryCard">
                             {item.mealName.length > 19
                               ? item.mealName.slice(0, 19)

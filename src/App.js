@@ -13,6 +13,7 @@ import UpdateItem from './UpdateItem';
 import Saved from './Saved';
 import LoginPage from './LoginPage';
 import Profile from './Profile';
+import Register from './Register';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
   <Route path='/update/:id' element={<UpdateItem />}></Route>
   <Route path='/saved' element={<Saved />}></Route>
   <Route path='/Profile' element={<Profile />}></Route>
+  <Route path='/register' element={<Register />}></Route>
 </Routes>
 </BrowserRouter>
 </Context>

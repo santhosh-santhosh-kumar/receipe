@@ -1,0 +1,9 @@
+.new-user{
+    position: absolute;
+    left: 150px;
+    top: 16px;
+    padding: 10px;
+    border-radius: 100%;
+    background-color:black;
+    color: white;
+}

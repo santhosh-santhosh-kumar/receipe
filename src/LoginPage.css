@@ -1,14 +1,24 @@
 .loginMain{
-    border: 2px solid black;
     margin: 00px;
+    height: 100vh;
+    background-image: url("./assets/wallpaperflare.com_wallpaper\ \(2\).jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-.page{
-    display: flex;
-    justify-content: center;
+
+.loginPage{
+    padding: 150px 500px 0px 400px;
 }
-.page h5{
-  margin-right: 30px;
+.page i{
+    font-size: 80px;
+    color: white;
+    margin: 0px 0px 0px 120px;
+
+ 
 }
-.pages{
-    margin-left: 50px;
+.page p{
+ color: white;
+ margin: 0px 0px 40px 133px;
+
 }

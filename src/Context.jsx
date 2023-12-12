@@ -5,7 +5,7 @@ import axios from 'axios';
 export const ContextProvide=createContext()
 
 export function Context(props) {
-  const profile=[]
+  const [user,setUser]=useState("")
   const [item,setItem]=useState([])
   const [category,setCategory]=useState([])
   const [fetchError, setFetchError] = useState(null);
@@ -33,7 +33,7 @@ export function Context(props) {
 
   return (
     <>
-    <ContextProvide.Provider value={[item,setItem,login,setLogin,profile]}>
+    <ContextProvide.Provider value={[item,setItem,login,setLogin,user,setUser]}>
       {props.children}
     </ContextProvide.Provider>
     </>

@@ -1,25 +1,20 @@
+.cetegoryContainer{
+    padding: 10px;
+    
+}
 .categoryCard{
-    background-color: rgba(210, 105, 30, 0.749) !important;
-    color: white;
-    text-align: center;
-    width: 195px !important;
-    padding:5px;
-    margin-left: 30px;
-    border-radius: 20px;
+    color: black;
 }
 .card-img-top{
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
     position: relative;
 }
 .fa-bookmark{
     position: absolute;
-    left: 260px;
-    top: 17px;
-    background-color: black;
+    left: 150px;
+    top: 14px;
     padding: 10px;
     border-radius: 100%;
-    color: white;
+   
 }
 .categoryArea{
     color: black;
@@ -28,7 +23,6 @@
 .card{
     margin-top: 20px !important;
     border: none;
-    border-radius: 15px !important;
 }
 .fa-house{
     margin-right: 10px;
@@ -45,6 +39,7 @@
 }
 .cetegoryContainer{
   background-color:#f5f5f5 !important;
+  padding-bottom: 40px;
 }
 .cetegoryHeading{
     border-bottom: 4px solid chocolate;
@@ -54,11 +49,62 @@
 .navDetails ul{
     display: flex;
     list-style-type: none;
-    padding: 10px;
+    padding: 8px;
   }
   .navDetails{
     background-color: chocolate;
-    height: 50px;
-    width: 87%;
-    margin-left: 100px;
+    height: 45px;
+    width: 100%;
+    margin-left: 00px;
   }
+.pagination{
+    margin-left: 100px;
+    text-align: right;
+}
+
+.page-item a{
+    text-decoration: none !important;
+    color: black;
+    padding: 8px;
+
+}
+
+.active{
+    background-color: rgba(0, 0, 0, 0.194);
+    padding: 0px 2px 0px 2px;
+    margin-bottom: 15px;
+}
+.navDetails{
+    position: relative;
+}
+.saveList1{
+    position:absolute;
+    display: flex;
+    right: 110px;
+    top: 10px;
+}
+.saveList1 ul{
+    display: flex;
+   list-style-type: none;
+}
+.saveList{
+    display: flex;
+    margin-left: 1000px;
+}
+.active1{
+    background-color: rgba(0, 0, 0, 0.194);
+}
+.savePage{
+    margin-left: 5px;
+    padding: 4px 5px 0px 4px;
+}
+.savedPage{
+    margin-top: 4px;
+}
+.page-item:hover{
+border-bottom: 5px solid wheat;
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
+}

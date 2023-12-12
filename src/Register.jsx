@@ -2,6 +2,8 @@ import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Register.css";
+
 
 function Register() {
     const nav = useNavigate();
@@ -67,79 +69,81 @@ function Register() {
 
   return (
     <>
-      <div className="login">
-        <div className="Register">
-          <h3>Login Form</h3>
+      <div className="mainRegister">
+        <div className="register">
+        <div className="page">
+            <i class="fa-solid fa-user"></i>
+            <p>Rgister</p>
+            </div>
+
           <form className="registerDetails" onSubmit={formik.handleSubmit}>
-            <label id="firstName">FirstName:</label>
-            <br></br>
-            <input
+            <div className="container">
+            <div className="row">
+                <div className="col">
+                <input
               type="text"
               name="firstName"
               onChange={formik.handleChange}
               value={formik.values.firstName}
+              placeholder="First name"
             ></input>
-            <br></br>
             <span style={{ color: "red" }}>{formik.errors.firstName}</span>
-            <br></br>
-            <label id="lastName">LastName:</label>
-            <br></br>
+            </div>
+            <div className="col">
             <input
               type="text"
               name="lastName"
               onChange={formik.handleChange}
               value={formik.values.lastName}
+              placeholder="Last name"
             ></input>
-            <br></br>
             <span style={{ color: "red" }}>{formik.errors.lastName}</span>
-            <br></br>
-            <label id="mobileNumber">Mobile Number:</label>
-            <br></br>
+            </div>
+            <div className="col">
             <input
               type="text"
               name="mobileNumber"
               onChange={formik.handleChange}
               value={formik.values.mobileNumber}
+              placeholder="Mobile number"
             ></input>
-            <br></br>
             <span style={{ color: "red" }}>{formik.errors.mobileNumber}</span>
-            <br></br>
-            <label for="Email" id="Email">
-              Email:
-            </label>
-            <br></br>
+            </div>
+            <div className="col">
             <input
               type="text"
               name="Email"
               onChange={formik.handleChange}
               value={formik.values.Email}
+              placeholder="Email"
             ></input>
-            <br></br>
             <span style={{ color: "red" }}>{formik.errors.Email}</span>
-            <br></br>
-            <label id="password">Password:</label>
-            <br></br>
+            </div>
+            <div className="col">
             <input
               type="text"
               name="Password"
               onChange={formik.handleChange}
               value={formik.values.Password}
+              placeholder="Password"
             ></input>
-            <br></br>
             <span style={{ color: "red" }}>{formik.errors.Password}</span>
-            <br></br>
-            <label id="conformPassword">Conform Password:</label>
-            <br></br>
+            </div>
+            <div className="col">
             <input
               type="text"
               name="conformPassword"
               onChange={formik.handleChange}
               value={formik.values.conformPassword}
+              placeholder="Conform Password"
             ></input>
-            <br></br>
             <span style={{ color: "red" }}>{formik.errors.conformPassword}</span>
-            <br></br>
-            <button type="submit">Register</button>
+            </div>
+            </div>
+            </div>
+
+            <button type="submit" className="registerButton">Register</button>
+
           </form>
         </div>
       </div>

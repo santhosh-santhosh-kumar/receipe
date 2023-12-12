@@ -4,17 +4,16 @@ import { useContext } from "react";
 import { ContextProvide } from "./Context";
 import Profile from "./Profile";
 
+
 function Nav() {
   const [item, setItem,login,setLogin] = useContext(ContextProvide);
-  
-  return (
+    return (
     <>
       <div className="navBar">
         <ul>
           <li className="logo">
-            {" "}
             <Link class="navbar-brand" to={"/Meal"}>
-            <h2><strong><i class="fa-solid fa-burger"></i>Tastyyyy</strong></h2>
+            <p className="title">EATERY</p>
             </Link>
           </li>
           <div className="container">
@@ -22,25 +21,25 @@ function Nav() {
               <div className="col navBarCol">
                 <li>
                   <Link to={"/addReceipe"} class="nav-link home" href="#">
-                  <strong>Add Receipe</strong>
+                  Add Receipe
                   </Link>
                 </li>
                 <li>
                   {" "}
                   <Link to={"/yourList"} class="nav-link" href="#">
-                    <strong>Your Receipe</strong>
+                    Your Receipe
                   </Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to={"/recent"} class="nav-link" href="#">
-                  <strong>Saved</strong>
+                  <Link to={"/saved"} class="nav-link" href="#">
+                  Saved
                   </Link>
                   </li>
                   <li>
                     {}
                   <Link to={`/${login ? "Profile" : "login"}`} class="nav-link">
-                  <strong><i class="fa-solid fa-user"></i></strong>
+                  {login ? <i class="fa-solid fa-user"></i> :"Login"}
                   </Link>
                 </li>
               </div>

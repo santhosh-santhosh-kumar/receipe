@@ -35,8 +35,8 @@ body{
   margin-left: 700px;
 }
 .main{
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./assets/header_image.jpg") center/cover no-repeat;
-  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./assets/pexels-daniel-reche-1556688.jpg") center/cover no-repeat;
+  height: 65vh;
   filter: blur(20px);
   -webkit-filter: blur(0px);
   background-position: center;
@@ -50,19 +50,20 @@ body{
   width: 300px;
   margin-left: 40%;
   border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
   margin-top: 50px;
-  text-align: center;
-  border: none;
+  border: 1px solid white;
   opacity: 1;
-
+  text-align: center;
+  position: relative;
+  color: white;
 }
 .fa-magnifying-glass{
   margin-left: 20px;
-  background-color: chocolate;
+  background-color: rgba(0, 0, 0, 0.05);
   padding: 20px;
   border-radius: 100%;
   color: white;
-  border: 1px solid white;
   opacity: 1;
 
 }
@@ -76,52 +77,26 @@ body{
 .homeText{
   margin-left: 90px;
   margin-top: 20px;
-
   opacity: 1;
+  letter-spacing:2px;
+  font-size: 20px;
+}
+.homeHeading{
+  letter-spacing:2px;
 
 }
 .col-3{
   margin-top: 30px !important;
 }
-.navbar{
-  background-color:chocolate !important;
-}
+
 .navbar-nav li .home{
   margin-left: 900px;
 }
 .navbar-nav li{
   margin-left: 50px;
 }
-.detailList1 ul{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
 
-}
-.Ingredients{
-  background-color: chocolate;
-  margin-top: 40px;
-  padding: 20px;
-}
-.detailList2 ul{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 10px;
 
-}
-.Measure{
-  margin-top: 50px;
-  margin-left: 120px;
-  background-color:beige;
-  width: 85%;
-}
-.instruct{
-  margin-top: 50px;
-  margin-left: 120px;
-}
-.instruct ul li{
-  margin-top: 20px;
-}
 .source{
   margin-top: 10px;
 }
@@ -136,22 +111,21 @@ body{
 .navBarCol{
   display: flex;
   list-style-type: none;
-  margin-left: 700px;
+  margin-left: 900px;
 }
 .navBarCol li{
-  font-size: 14px;
-  padding: 17px 10px 20px 10px;
+  font-size: 12px;
+  padding: 5px 10px 5px 10px;
   text-transform: uppercase;
   color:white;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
 }
 .navBarCol li:hover{
-  background-color: rgba(0, 0, 0, 0.6);
-  
+ border: 1px solid white;  
 }
 .navBar{
-  background-color: chocolate;
-  height: 50px;
+  height: 100px;
+  padding-top: 30px;
 }
 .logo{
   margin-top: 0PX;
@@ -191,4 +165,57 @@ body{
 }
 .homeContainer{
 background-color: #f5f5f5;
+padding: 5px 10px;
+}
+.mealCard img{
+  transition: height 2s;
+
+}
+.mealCard:hover img{
+  width: 300px;
+  height: 300px;
+}
+.mealCard{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fa-magnifying-glass:hover{
+  background-color: rgba(0, 0, 0, 0.135);
+  border: 1px solid white;
+
+}
+.suggestion{
+  position: absolute;
+  top: 210px;
+  padding: 20px;
+  left: 540px;
+  color: chocolate;
+  width: 500px;
+  background-color: rgba(0, 0, 0, 0.966);
+  
+}
+.suggestion ul{
+  list-style-type: none !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 20px;
+
+}
+.blockLevel{
+  display: block;
+}
+.hideLevel{
+  display: none;
+}
+.title{
+  letter-spacing: 4px;
+}
+.main{
+  position: fixed;
+  width: 100%;
+}
+.homeContainer{
+  position:relative;
+  top: 480px;
+  left: 00px;
 }

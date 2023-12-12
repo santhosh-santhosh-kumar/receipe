@@ -5,25 +5,32 @@
 .fa-chevron-right{
     color: white;
 }
+.detailList1 ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    overflow: auto;
+  }
 .pageCategory{
     color: white;
     margin-top: 7px;
     margin-left: 5px;
     margin-right: 5px;
+    text-transform: uppercase;
 }
 .cetegoryContainer{
   background-color: whitesmoke;
 }
 .detailsHead{
-    margin: 40px 0px 40px 0px;
+    font-size: 20px;
+    display: inline-block;
     border-bottom: 4px solid chocolate;
-    width: 170px;
-
+    margin: 20px 0px 20px 120px;
 }
+
 .card-img-top1{
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
     position: relative;
+    border-radius: 10px;
 }
 .fa-bookmark1{
     position: absolute;
@@ -39,7 +46,46 @@
 }
 .detailList2 ul{
     list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+     overflow: auto;
 }
 .instruct ul{
     list-style-type: none;
 }
+.listOfDetails ul{
+    display: flex;
+    list-style-type: none;
+}
+.listOfDetails ul li{
+    margin-right: 30px;
+    border-radius: 5px;
+    padding: 2px 10px 5px 10px;
+}
+.Measure{
+    width: 85%;
+  }
+  .instruct ul{
+    overflow: auto;
+    height: 300px;
+  }
+  .instruct ul li{
+    margin-bottom: 20px;
+  }
+  .active2{
+    background-color: rgba(0, 0, 0, 0.735);
+    color: white !important;
+  }
+  .fa-spoon,.fa-check{
+    color: chocolate;
+  }
+  .fa-check{
+    margin-right: 4px;
+  }
+  .fa-bookmark1{
+    top: 170px;
+  }
+  .listDot{
+    list-style-type: disc;
+  }

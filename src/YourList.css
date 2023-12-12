@@ -3,15 +3,33 @@
  margin-top: 40px;
  padding-bottom: 30px;
 }
-.delete{
-    background-color: rgba(210, 105, 30, 0.749) !important;
-    color: white;
-    text-align: center;
-    padding:5px 15px 5px 15px;
-    margin-left: 30px;
-    border-radius: 20px;
-    border: none;
-}
+
 .categoryEdit{
     padding: 7px 10px 7px 10px;
+}
+.fa-trash-can{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 100%;
+    display: none;
+}
+.yourListUl{
+    display: flex;
+    list-style-type: none;
+    justify-content: start;
+}
+.yourListEdit{
+  margin-left: 70px;
+}
+.fa-pen-to-square{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.yourListCard:hover .fa-trash-can{
+ display: block;
 }

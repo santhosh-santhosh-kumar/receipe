@@ -1,0 +1,36 @@
+.signUp input{
+    height: 45px;
+    width: 300px;
+    border-radius: 8px;
+
+}
+.signUp button{
+    margin-left: 10px;
+    border: none;
+    padding: 12px 45px 12px 50px;
+    border-radius: 50px;
+}
+.loginButton{
+    margin-left: 0px;
+}
+.inputLogin{
+    background-color: chocolate;
+}
+.inputRegister{
+    background-color: rgba(0, 0, 0, 0.025) !important;
+    color: white;
+    border: 1px solid white !important;
+}
+.inputRegister:hover{
+    background-color: rgb(127, 216, 49) !important;
+    color: black;
+    border: none !important;
+}
+.signUp span{
+    margin-left: 5px;
+    color: rgb(163, 92, 42) !important;
+
+}
+::placeholder{
+  padding-left: 20px;
+}
