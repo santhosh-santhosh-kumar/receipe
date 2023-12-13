@@ -41,12 +41,11 @@ function YourList() {
     try {
       const response = await axios.delete(
         "https://6557461abd4bcef8b6125cf6.mockapi.io/practice/" + id
-      );
+      )
       if (response.data == null) {
         throw Error("no items found");
       }
     } catch (err) {}
-    nav("/YourList");
   };
 
   return (

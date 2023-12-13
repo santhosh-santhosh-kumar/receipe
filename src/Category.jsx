@@ -110,7 +110,7 @@ function Category() {
                 >
                   <Link
                     style={{ textDecoration: "none" }}
-                    to={`/details/${item.strMeal}@${id}`}
+                    to={`/details/${item.strMeal}`}
                   >
                     <img
                       src={item.strMealThumb}

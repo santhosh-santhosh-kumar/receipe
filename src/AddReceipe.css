@@ -12,13 +12,13 @@
     padding: 10px; */
 }
 .measure{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 15px;
     width: 50%;
     margin-left: 50px;
     background-color: bisque;
-    padding: 10px;
+    padding: 10px; */
 
 }
 .commends{

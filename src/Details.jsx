@@ -12,19 +12,15 @@ function Details() {
   const [list, setList] = useState("Ingredients");
   const [details, setDetails] = useState([]);
   let { id } = useParams();
-  
-  id=id.split("@")
-  console.log(id)
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
-
   useEffect(() => {
     const fetchItems = async () => {
       try {
         const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/search.php?s=${id[0]}`
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${id}`
         );
-        if (response.data.meals == null) {
+        if (!response.data.meals) {
           throw Error("Items not found");
         }
         setDetails(response.data.meals);
@@ -37,17 +33,16 @@ function Details() {
     };
     fetchItems();
   }, []);
-
+console.log(fetchError)
   return (
     <>
       {load && <p>Loading...</p>}
-      {fetchError ? (
+      {fetchError==="Items not found" ? ( 
         <AddItemDetails />
-      ) : (
-        details.map((item) => {
+      ) : ( details.map((item) => {
           const instructArray = item.strInstructions;
           let array = instructArray.split(".");
-          if(item.strMeal===id[0]){
+          if(item.strMeal===id){
             return (
               <>
                 <div className="container navBarDetails">
