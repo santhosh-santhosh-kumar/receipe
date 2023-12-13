@@ -3,9 +3,8 @@ import { createContext } from 'react';
 import axios from 'axios';
 
 export const ContextProvide=createContext()
-
 export function Context(props) {
-  const [user,setUser]=useState("")
+  const [user,setUser]=useState({})
   const [item,setItem]=useState([])
   const [category,setCategory]=useState([])
   const [fetchError, setFetchError] = useState(null);

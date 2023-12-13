@@ -6,11 +6,11 @@ import { useContext } from "react";
 import { ContextProvide } from "./Context";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import Profile from './Profile';
 
 function Login() {
   const nav = useNavigate();
-
-  const [item, setItem,login,setLogin] = useContext(ContextProvide);
+  const [item, setItem,login,setLogin,user,setUser] = useContext(ContextProvide);
       const formik=useFormik({
         initialValues:{
             Email:"",
@@ -35,7 +35,6 @@ function Login() {
             try{
                 const response=await axios.get("https://6557461abd4bcef8b6125cf6.mockapi.io/user")                
                 const res=response.data.map((value)=>{
-                  
                     if(values.Email===value.Email&&values.Password===value.Password){
                         alert('Login successfully')
                         setLogin(true)
@@ -43,13 +42,14 @@ function Login() {
                         passwordOk=true;
                     }})
             }catch(error){
-                console.log(error)
+                alert("Smothing went wrong please login again")
             }
             if(passwordOk==false){
               alert('Wrong password')
             }
           }
     })
+    setUser(formik.values)
   return (
     <>
     <div className='login'>

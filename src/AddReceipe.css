@@ -2,40 +2,31 @@
     width: 500px;
     border: 1px solid black;
 }
-.ingrediant{
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-gap: 15px;
-    margin-left: 50px;
-    width: 50%;
-    background-color: wheat;
-    padding: 10px; */
-}
 .measure{
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-gap: 15px;
-    width: 50%;
-    margin-left: 50px;
-    background-color: bisque;
-    padding: 10px; */
-
+    margin-top: 20px;
 }
 .commends{
-    margin-left: 50px;
+    margin-left: 200px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 20px;
 }
 .combine{
-    display: flex;
+ margin-left: 220px;
 }
-.containerAdd{
-    background-color: whitesmoke;
-    
+
+.addReceipe{
+    /* background-image: url("./assets/food-with-ingredients.jpg");
+   background-size: cover;    
+   background-position: center; */
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./assets/max-komthongvijit-_RwtD1MrUrw-unsplash.jpg") center/cover no-repeat;
+
 }
 .col-form-label{
     margin-left: 220px;
 }
 .addTextArea{
-    margin-left: 50px;
+    margin-left: 200px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -45,7 +36,7 @@
     font-size: 20px;
     padding: 10px 30px 30px 30px;
     border-radius: 10px;
-    margin: 100px 0px 0px 150px;
+    margin: 100px 0px 0px 100px;
     height: 50px;
     background-color: chocolate;
 }
@@ -53,14 +44,42 @@
     display: flex;
 }
 hr{
-    color: chocolate;
-    height: 25px;
+    color: white;
+    height: 30px;
 }
 .containerAdd{
     padding-bottom: 30px;
 }
 .IngrediantsButton{
     background-color: chocolate;
-    padding: 0px 5px 0px 5px;
+    padding: 3px 10px 5px 10px;
+    font-size: 15px;   
+    margin-left: 110px;
+    border-radius: 5px;
     
+}
+.IngrediantsButton1{
+    background-color: chocolate;
+    padding: 3px 10px 5px 10px;
+    font-size: 15px;   
+    margin-left: 83px;
+    border-radius: 5px;
+}
+.containerAdd input{
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+}
+.containerAdd label{
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+
+.title h4{
+    color: whitesmoke;
+}
+.ingrediants{
+    margin:20px 0px 0px 220px;
+    width: 500px;
+    height: 40px;
 }

@@ -7,31 +7,48 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Profile() {
-  const nav=useNavigate()
-    const [user,setUser]=useState([])
-    let [item, setItem,login,setLogin] = useContext(ContextProvide);
-    const handleClick=()=>{
-      setLogin(false)
-      nav("/Meal")
-    }
-      return (
+  const nav = useNavigate();
+  let [item, setItem, login, setLogin, user, setUser] =
+    useContext(ContextProvide);
+  const [profile, setprofile] = useState("");
+  console.log(user);
+  useEffect(() => {
+    const fetchItem = async () => {
+      try {
+        const response = await axios.get(
+          "https://6557461abd4bcef8b6125cf6.mockapi.io/user"
+        );
+        const res = response.data.map((value) => {
+          if (user.Email === value.Email && user.Password === value.Password) {
+            setLogin(true);
+            setprofile(value);
+          }
+        });
+      } catch (error) {
+        alert("Smothing went wrong please login again");
+      }
+    };
+    fetchItem();
+  }, []);
+
+  const handleClick = () => {
+    setLogin(false);
+    nav("/Meal");
+  };
+  return (
     <>
-      <div className="container containerProfile">
-        <div className="row">
-            <div className="col-6">
-                <div className="profileImg">
-                    <img src="https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg" alt="" />
-                </div>
-            </div>
-            <div className="col-6">
-                <div className="profileContent">
-                 <h1><i class="fa-solid fa-user"></i></h1>
-                 <h4>Member Login</h4>
-                 <span onClick={handleClick}>Logout</span>
-                </div>
-                <p></p>
-            </div>
-        </div>
+      <div className="containerProfile">
+        <h1>
+          <i class="fa-solid fa-user"></i>
+        </h1>
+        <h4>USER</h4>
+      <div className="containerProfile1">
+          <div className="userDetails">{profile.firstName} { profile.lastName}</div>
+          <div className="userDetails">{profile.Email}</div>
+          <div className="userDetails">{profile.mobileNumber}</div>
+      </div>
+        <span onClick={handleClick}>Logout</span>
+        <span onClick={handleClick}>Logout</span>
       </div>
     </>
   );

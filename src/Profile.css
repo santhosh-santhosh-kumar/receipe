@@ -1,9 +1,46 @@
-.profileImg img{
-    width: 400px !important;
-    height: 400px !important;
-}
-.profileContent .fa-user{
-    padding: 30px;
+.containerProfile .fa-user{
+    padding: 10px 15px;
     font-size: 80px;
-    border-radius: 100%;
+    color: white !important;
+    margin-left: 400px;
+    margin-top: 100px;
+    border: 1px solid whitesmoke;
+}
+.containerProfile span{
+    display: inline-block;
+    color: whitesmoke;
+    margin-left: 410px;
+    padding: 10px 15px;
+    margin-top: 30px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+}
+.containerProfile span:hover{
+    background-color: rgba(41, 184, 150, 0.913);
+    border: none;
+
+}
+.containerProfile h4{
+    color:whitesmoke;
+    margin-left: 420px;
+
+}
+.containerProfile{
+    background-image: url("./assets/various-vegetables-black-table-with-space-message.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.containerProfile1 .userDetails{
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    margin-top: 50px !important;
+    padding: 18px;
+    text-align: center;
+    border-radius: 10px;
+    }
+.containerProfile1{
+    width: 400px;
+    margin-left: 250px;
+ 
 }

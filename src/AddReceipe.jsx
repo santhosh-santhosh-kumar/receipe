@@ -58,6 +58,7 @@ function AddReceipe() {
   return (
     <>
       {true ? (
+        <div className="addReceipe">
         <div className="container containerAdd">
           <div className="row">
             <div className="col-12">
@@ -169,7 +170,7 @@ function AddReceipe() {
                           <input
                             type="text"
                             className="ingrediants"
-                            id="ingrediants1"
+                            id="ingrediants"
                             onChange={(e) => handleChangeIngredient(e, i)}
                           ></input>
                         </div>
@@ -180,7 +181,7 @@ function AddReceipe() {
                     <label htmlFor="measurments" className="addLabel">
                       Measurements
                       <span
-                        className="IngrediantsButton"
+                        className="IngrediantsButton1"
                         onClick={addMeasureTg}
                       >
                         Add Measure
@@ -218,11 +219,12 @@ function AddReceipe() {
                       })
                     }
                   ></textarea>
-                  <button className="addReceipeButton">Add Receipe</button>
+                  <button className="addReceipeButton">Add</button>
                 </div>
               </form>
             </div>
           </div>
+        </div>
         </div>
       ) : (
         <LoginPage />
