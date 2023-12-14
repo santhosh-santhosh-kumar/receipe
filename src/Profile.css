@@ -44,3 +44,51 @@
     margin-left: 250px;
  
 }
+.notification4{
+    background-color: whitesmoke;
+    position: absolute;
+    width: 350px;
+    padding: 30px;
+    height: 400px;
+    right: 0px;
+    left: 280px;
+    border-radius: 5px;
+    display: none;
+}
+.notification5{
+    background-color: whitesmoke;
+    position: absolute;
+    width: 350px;
+    padding: 30px;
+    height: 400px;
+    top: 100px;
+    border-radius: 5px;
+    display: block;
+}
+.login{
+    position: relative;
+}
+.notification4 p{
+  margin-left: 80px;
+  margin-bottom: 50px;
+}
+.notification4 .close{
+    margin-left: 50px;
+    margin-top: 30px;
+    display: inline-block;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+.notification4 .fa-check{
+   border: 1px solid green;
+   font-size: 100px;
+   padding: 15px 20px 15px 20px;
+   border-radius: 100%;
+   color: green;
+   
+}
+.notification4 .sucess{
+    margin-left: 60px;
+}

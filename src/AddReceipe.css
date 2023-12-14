@@ -84,3 +84,53 @@ hr{
     width: 500px;
     height: 40px;
 }
+.notification2 .itemNoti{
+    margin-left: 20px;
+}
+.notification2{
+    background-color: whitesmoke;
+    position: absolute;
+    width: 350px;
+    padding: 30px;
+    height: 400px;
+    top: 300px;
+    left: 600px;
+    border-radius: 5px;
+    display: none;
+}
+.notification3{
+    display: block;
+    background-color: whitesmoke;
+    position: absolute;
+    width: 350px;
+    padding: 30px;
+    height: 400px;
+    top: 600px;
+    left: 600px;
+    border-radius: 5px;
+
+}
+
+.notification2 p{
+    margin-left: 80px;
+    margin-bottom: 30px;
+  }
+  .notification2 .close{
+      margin-left: 80px;
+      background-color: green;
+      padding: 10px;
+      border-radius: 10px;
+      color: white;
+  }
+  .notification2 .fa-check{
+     border: 1px solid green;
+     font-size: 100px;
+     padding: 15px 20px 15px 20px;
+     border-radius: 100%;
+     color: green;
+     margin-top: 30px;     
+     margin-bottom: 30px;     
+  }
+  .notification2 .sucess{
+      margin-left: 100px;
+  }

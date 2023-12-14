@@ -13,7 +13,7 @@ function Meallist() {
           {item.map((item) => {
             return (
               <div className="col-3">
-                                  <Link style={{textDecoration: 'none'}} to={`/category/${item.strCategory}`} >
+                                  <Link style={{textDecoration: 'none'}} to={`/${item.strCategory}`} >
 
                 <div class="card mealCard" style={{ width: "20rem;" }}>
                   <img src={item.strCategoryThumb} class="card-img-top" alt="..." />

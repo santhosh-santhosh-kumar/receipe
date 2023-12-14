@@ -89,3 +89,14 @@
   .listDot{
     list-style-type: disc;
   }
+  .hrTag{
+color: black;
+  }
+  .detailsTitle{
+    text-transform: capitalize;
+    border-bottom: 3px solid black;
+    font-size: 25px;
+    padding-bottom: 2px;
+    margin: 10px;
+    display: inline-block;
+  }

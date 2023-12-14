@@ -12,6 +12,7 @@ function AddReceipe() {
   const [measurement, setMeasurement] = useState([]);
   const [value, setValue] = useState([]);
   const [item, setItem, login, setLogin] = useContext(ContextProvide);
+  const [notification,setNotification]=useState(false)
   const [inputData, setInputData] = useState({
     category: "",
     mealName: "",
@@ -25,12 +26,11 @@ function AddReceipe() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("Items posted succesfully");
     axios.post(
       "https://6557461abd4bcef8b6125cf6.mockapi.io/practice",
       inputData
     );
-    nav(`/category/${inputData.category}`);
+    setNotification(true)
   };
   function addInputTg() {
     let value1 = [...value, []];
@@ -54,11 +54,13 @@ function AddReceipe() {
 
     setInputData({ ...inputData, measure: measurement });
   }
-
+  const handleNavigate=()=>{
+    nav(`/${inputData.category}`);
+  }
   return (
     <>
-      {true ? (
-        <div className="addReceipe">
+      {login ? (
+        <div className="addReceipe" id="homePage">
         <div className="container containerAdd">
           <div className="row">
             <div className="col-12">
@@ -76,6 +78,7 @@ function AddReceipe() {
                       type="text"
                       class="form-control"
                       id="inputEmail3"
+                      required
                       onChange={(e) =>
                         setInputData({ ...inputData, category: e.target.value })
                       }
@@ -224,8 +227,18 @@ function AddReceipe() {
                   <button className="addReceipeButton">Add</button>
                 </div>
               </form>
+
+
             </div>
           </div>
+        </div>
+
+
+        <div className={`notification2 ${notification ? "notification3":""}`}>
+          <p className='sucess'>successfully</p>
+          <p className="itemNoti">{`Item Added in ${inputData.category} category`}</p>
+          <p><i class="fa-solid fa-check"></i></p>
+          <span className='close' onClick={handleNavigate}>See Add item</span>
         </div>
         </div>
       ) : (

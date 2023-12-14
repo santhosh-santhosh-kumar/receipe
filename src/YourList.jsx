@@ -39,11 +39,11 @@ function YourList() {
 
   const handleDelete = async (id) => {
     try {
-      const updateNewItems=newItem.filter((e)=>e.id!==id)
-      setNewItem(updateNewItems)
+      const updateNewItems = newItem.filter((e) => e.id !== id);
+      setNewItem(updateNewItems);
       const response = await axios.delete(
         "https://6557461abd4bcef8b6125cf6.mockapi.io/practice/" + id
-      )
+      );
       if (response.data == null) {
         throw Error("no items found");
       }
@@ -52,7 +52,7 @@ function YourList() {
 
   return (
     <>
-      {true ? (
+      {login ? (
         <div>
           <div className="container navBarDetails">
             <div className="row">
@@ -61,15 +61,6 @@ function YourList() {
                   <li>
                     <Link to={"/Meal"}>
                       <i class="fa-solid fa-house"></i>
-                    </Link>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <i class="fa-solid fa-chevron-right"></i>
-                  </li>
-                  <li>
-                    <Link style={{ textDecoration: "none" }} to={`/Meal`}>
-                      <h6 className="pageCategory">CATEGORY</h6>
                     </Link>
                   </li>
                   <li>
@@ -110,19 +101,28 @@ function YourList() {
                         }}
                       ></i>{" "}
                       <div class="card-body">
-                        <span>Receipes</span>
-                            <Link
-                              style={{ textDecoration: "none" }}
-                              to={`/update/${item.id}`}
-                            >
-                              <span className="categoryCard yourListEdit">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                              </span>
-                            </Link>
-
-                        <p className="categoryArea">
-                          <strong>{item.mealName}</strong>
-                        </p>
+                        <Link
+                          style={{ textDecoration: "none" }}
+                          to={`/details/${item.mealName}`}
+                        >
+                          <span className="yourListReceipe">Receipes</span>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none" }}
+                          to={`/update/${item.id}`}
+                        >
+                          <span className="categoryCard yourListEdit">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                          </span>
+                        </Link>
+                        <Link
+                          style={{ textDecoration: "none" }}
+                          to={`/details/${item.mealName}`}
+                        >
+                          <p className="categoryArea">
+                            <strong>{item.mealName}</strong>
+                          </p>
+                        </Link>
                       </div>
                     </div>
                   </div>

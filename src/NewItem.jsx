@@ -40,11 +40,16 @@ function NewItem() {
                       class="card"
                       style={{ width: "1rem !important;", height: "18.5rem"}}
                     >
+                       <Link
+                          style={{ textDecoration: "none" }}
+                          to={`/details/${item.mealName}`}
+                        >
                       <img
                         src={item.imageUrl}
                         class="card-img-top"
                         alt="..."
                         style={{height:"190px",width: "100%"}}/>
+                       </Link>
                        <i class="fa-solid fa-user new-user"></i>
                       <div class="card-body">
                         <Link

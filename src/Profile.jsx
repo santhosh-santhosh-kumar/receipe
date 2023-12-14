@@ -11,7 +11,7 @@ function Profile() {
   let [item, setItem, login, setLogin, user, setUser] =
     useContext(ContextProvide);
   const [profile, setprofile] = useState("");
-  console.log(user);
+  const [logOut,setLogOut]=useState(false)
   useEffect(() => {
     const fetchItem = async () => {
       try {
@@ -33,8 +33,15 @@ function Profile() {
 
   const handleClick = () => {
     setLogin(false);
-    nav("/Meal");
+    setLogOut(true)
   };
+  const handleNavigate=()=>{
+    nav(`/login`);
+  }
+  const handleCancel=()=>{
+    nav(`/Meal`);
+    setLogOut(false)
+  }
   return (
     <>
       <div className="containerProfile">
@@ -49,6 +56,14 @@ function Profile() {
       </div>
         <span onClick={handleClick}>Logout</span>
       </div>
+
+      <div className={`notification4 ${logOut ? "notification5":""}`}>
+          <p className='sucess'>Do you want to log out</p>
+          <p><i class="fa-solid fa-check"></i></p>
+          <span className='close' onClick={handleNavigate}>Conform</span>
+          <span className='close' onClick={handleCancel}>Cancel</span>
+        </div>
+
     </>
   );
 }

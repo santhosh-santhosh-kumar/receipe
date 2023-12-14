@@ -34,3 +34,53 @@
 ::placeholder{
   padding-left: 20px;
 }
+.inputLogin:hover{
+    background-color: rgb(127, 216, 49) !important;
+    
+}
+
+.notification{
+    background-color: whitesmoke;
+    position: absolute;
+    width: 350px;
+    padding: 30px;
+    height: 400px;
+    top: 100px;
+    border-radius: 5px;
+    display: none;
+}
+.notification1{
+    background-color: whitesmoke;
+    position: absolute;
+    width: 350px;
+    padding: 30px;
+    height: 400px;
+    top: 100px;
+    border-radius: 5px;
+    display: block;
+}
+.login{
+    position: relative;
+}
+.notification p{
+  margin-left: 80px;
+  margin-bottom: 50px;
+}
+.notification .close{
+    margin-left: 100px;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+.notification .fa-check{
+   border: 1px solid green;
+   font-size: 100px;
+   padding: 15px 20px 15px 20px;
+   border-radius: 100%;
+   color: green;
+   
+}
+.notification .sucess{
+    margin-left: 100px;
+}

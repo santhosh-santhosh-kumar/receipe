@@ -106,12 +106,11 @@ body{
 }
 
 .navBar ul{
-  display: flex;
-}
+  display: flex;}
 .navBarCol{
   display: flex;
   list-style-type: none;
-  margin-left: 900px;
+  margin-left: 800px;
 }
 .navBarCol li{
   font-size: 12px;
@@ -219,4 +218,7 @@ padding: 5px 10px;
   position:relative;
   top: 480px;
   left: 00px;
+}
+.navUser{
+  font-size: 20px;
 }

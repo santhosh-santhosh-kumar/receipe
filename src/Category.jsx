@@ -1,14 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ContextProvide } from "./Context";
 import { useParams } from "react-router-dom";
 import NewItem from "./NewItem.jsx";
 import "./Category.css";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { ContextProvide } from "./Context";
+
 
 function Category() {
   const { id } = useParams();
+  const [item, setItem, login, setLogin, user, setUser] =useContext(ContextProvide);
+  const nav = useNavigate();
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
   const [category, setCategory] = useState([]);
@@ -40,6 +44,7 @@ function Category() {
   }, []);
 
   const handleSave = (e, item) => {
+    if(login){
     if (e.target.className == "fa-regular fa-bookmark") {
       e.target.className = "fa-solid fa-bookmark";
       const fetchItems = async () => {
@@ -52,6 +57,9 @@ function Category() {
     } else {
       e.target.className = "fa-regular fa-bookmark";
     }
+  }else{
+    nav('/login')
+  }
   };
   function changePage(page) {
     if (page == 1) {

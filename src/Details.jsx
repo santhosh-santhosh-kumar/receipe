@@ -37,7 +37,7 @@ function Details() {
   return (
     <>
       {load && <p>Loading...</p>}
-      {fetchError==="Items not found" ? ( 
+      {fetchError ? ( 
         <AddItemDetails />
       ) : ( details.map((item) => {
           const instructArray = item.strInstructions;
@@ -61,7 +61,7 @@ function Details() {
                         <li>
                           <Link
                             style={{ textDecoration: "none" }}
-                            to={`/category/${item.strCategory}`}
+                            to={`/${item.strCategory}`}
                           >
                             <h6 className="pageCategory">CATEGORY</h6>
                           </Link>
@@ -113,7 +113,7 @@ function Details() {
                               })}
                               {ingredientsDetails.map((data) => {
                                 if (data != ""&&data != " "&&data !=null) {
-                                  return <li><i class="fa-solid fa-check"></i> {data}</li>;
+                                  return <li><i class="fa-solid fa-check"></i>{data}</li>;
                                 }
                               })}
                             </ul>
@@ -137,7 +137,7 @@ function Details() {
                                 return (
                                   <li className="intList">
                                     <i class="fa-solid fa-spoon"></i>
-                                    {` : ${data}`}
+                                    {` : ${data}`}g
                                   </li>
                                 );
          

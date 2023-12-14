@@ -60,13 +60,15 @@ function AddItemDetails() {
                           <i class="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
-                          <Link
+                        <Link
                             style={{ textDecoration: "none" }}
-                            to={`/category/${item.category}`}
+                            to={`/Yourlist`}
                           >
-                            <h6 className="pageCategory">CATEGORY</h6>
+                          <h6 className="pageCategory">YOURLIST</h6>
                           </Link>
                         </li>
+
+
                         <li>
                           <i class="fa-solid fa-chevron-right"></i>
                           <i class="fa-solid fa-chevron-right"></i>
@@ -82,7 +84,7 @@ function AddItemDetails() {
                 <div className="container">
                   <div className="row">
                     <div className="col-5">
-                      <h4 className="detailsHead">Meal Details</h4>
+                    <span className="detailsTitle">{item.mealName}</span>
                     </div>
                   </div>
                 </div>
@@ -97,7 +99,6 @@ function AddItemDetails() {
                       <i class="fa-regular fa-bookmark fa-bookmark1"></i>
                     </div>
                     <div className="col-8">
-                      <h3>{item.mealName}</h3>
                       <hr></hr>
                       <div className="listOfDetails">
                         <ul>
@@ -121,7 +122,7 @@ function AddItemDetails() {
                           </li>
                         </ul>
                       </div>
-                      <hr></hr>
+                      <hr className="hrTag"></hr>
 
                       {list == "Ingredients" && (
                         <div className="Ingredients">

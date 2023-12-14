@@ -7,10 +7,11 @@ import { useContext } from "react";
 import { ContextProvide } from "./Context";
 import LoginPage from "./LoginPage";
 import "./Saved.css";
+import { useNavigate } from "react-router-dom";
+
 
 function Saved() {
-  const [item, setItem, login, setLogin, user, setUser] =
-    useContext(ContextProvide);
+  const [item, setItem, login, setLogin, user, setUser] =useContext(ContextProvide);
   const [details, setDetails] = useState([]);
   const { id } = useParams();
   const [fetchError, setFetchError] = useState(null);
@@ -33,7 +34,6 @@ function Saved() {
           throw Error("Items not found");
         }
         setDetails(response.data);
-        console.log(details);
         setFetchError(null);
       } catch (err) {
         setFetchError(err.message);
@@ -48,6 +48,20 @@ function Saved() {
     }
     setCurrentPage(page);
   }
+  const handleDelete = async (id) => {
+      try {
+        const updateNewItems=details.filter((e)=>e.id!==id)
+        setDetails(updateNewItems)
+        const response = await axios.delete(
+          "https://657650fa0febac18d403d1fc.mockapi.io/login/" + id
+        )
+        if (response.data == null) {
+          throw Error("no items found");
+        }
+      } catch (err) {}
+  
+  };
+
 
   return (
     <>
@@ -117,7 +131,12 @@ function Saved() {
                           style={{ height: "190px", width: "100%" }}
                         />
                       </Link>
-
+                      <i
+                        class="fa-solid fa-trash"
+                        onClick={() => {
+                          handleDelete(item.id);
+                        }}
+                      ></i>
                       <div class="card-body">
                         <p className="categoryArea">
                           <i class="fa-solid fa-star"></i>

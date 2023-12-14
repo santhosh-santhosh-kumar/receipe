@@ -36,9 +36,7 @@ function Login() {
                 const response=await axios.get("https://6557461abd4bcef8b6125cf6.mockapi.io/user")                
                 const res=response.data.map((value)=>{
                     if(values.Email===value.Email&&values.Password===value.Password){
-                        alert('Login successfully')
                         setLogin(true)
-                        {nav('/Meal')}
                         passwordOk=true;
                     }})
             }catch(error){
@@ -50,6 +48,9 @@ function Login() {
           }
     })
     setUser(formik.values)
+    const handleNavigate=()=>{
+      nav('/Meal')
+    }
   return (
     <>
     <div className='login'>
@@ -66,8 +67,14 @@ function Login() {
             </form>
         </div>
     </div>
+    
+    <div className={`notification ${login ? "notification1":""}`}>
+          <p className='sucess'>successfully</p>
+          <p><i class="fa-solid fa-check"></i></p>
+          <span className='close' onClick={handleNavigate}>Continue</span>
+        </div>
+
     </>
   )
 }
-
 export default Login
