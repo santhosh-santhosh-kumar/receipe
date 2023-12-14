@@ -13,16 +13,21 @@ function Meallist() {
           {item.map((item) => {
             return (
               <div className="col-3">
-                                  <Link style={{textDecoration: 'none'}} to={`/${item.strCategory}`} >
-
-                <div class="card mealCard" style={{ width: "20rem;" }}>
-                  <img src={item.strCategoryThumb} class="card-img-top" alt="..." />
-                  <div class="card-body">
-                    <p class="card-title mealCardTitle">{item.strCategory}</p>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/${item.strCategory}`}
+                >
+                  <div class="card mealCard" style={{ width: "20rem;" }}>
+                    <img
+                      src={item.strCategoryThumb}
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <p class="card-title mealCardTitle">{item.strCategory}</p>
+                    </div>
                   </div>
-                </div>
                 </Link>
-
               </div>
             );
           })}

@@ -8,6 +8,7 @@ import "./Category.css";
 import "./YourList.css";
 import LoginPage from "./LoginPage";
 import { useNavigate } from "react-router-dom";
+import Recomends from "./Recomends";
 
 function YourList() {
   const nav = useNavigate();
@@ -24,15 +25,18 @@ function YourList() {
           "https://6557461abd4bcef8b6125cf6.mockapi.io/practice"
         );
         if (response.data == null) {
-          throw Error("Items not found");
+          throw Error("No Items");
         }
         setNewItem(response.data);
         setFetchError(null);
       } catch (err) {
         setFetchError(err.message);
+        console.log(newItem.length)
+
       } finally {
         setLoad(false);
       }
+
     };
     fetchItems();
   }, []);
@@ -47,7 +51,9 @@ function YourList() {
       if (response.data == null) {
         throw Error("no items found");
       }
-    } catch (err) {}
+    } catch (err) {
+      
+    }
   };
 
   return (
@@ -76,6 +82,7 @@ function YourList() {
           </div>
           <div className="container containerYourList">
             <div className="row">
+            {newItem.length ===0 && <p>No Items</p>}
               {newItem.map((item) => {
                 return (
                   <div className="col-2 categoryCol">
@@ -129,7 +136,10 @@ function YourList() {
                 );
               })}
             </div>
+            <Recomends />
+
           </div>
+
         </div>
       ) : (
         <LoginPage />

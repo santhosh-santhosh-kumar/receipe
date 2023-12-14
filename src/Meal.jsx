@@ -31,7 +31,7 @@ function Meal() {
 
               }
             ></input>
-            <Link to={`/category/${search}`}>
+            <Link to={`/${search}`}>
             <i class="fa-solid fa-magnifying-glass"></i>
             </Link>
             <div className="navText">

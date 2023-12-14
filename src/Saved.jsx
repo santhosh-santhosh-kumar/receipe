@@ -8,6 +8,7 @@ import { ContextProvide } from "./Context";
 import LoginPage from "./LoginPage";
 import "./Saved.css";
 import { useNavigate } from "react-router-dom";
+import Recomends from "./Recomends";
 
 
 function Saved() {
@@ -65,7 +66,7 @@ function Saved() {
 
   return (
     <>
-      {true ? (
+      {login ? (
         <>
           <div className="navDetails">
             <ul>
@@ -112,7 +113,7 @@ function Saved() {
             </h4>
             <div className="row categoryRow">
               {load && <p>Loading...</p>}
-              {fetchError && <p>{fetchError}</p>}
+              {details.length===0 && <p>No items</p>}
               {records.map((item) => {
                 return (
                   <div className="col-2 categoryCol">
@@ -165,6 +166,8 @@ function Saved() {
                 );
               })}
             </div>
+            <Recomends />
+
           </div>
         </>
       ) : (

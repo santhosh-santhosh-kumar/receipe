@@ -20,14 +20,6 @@
     padding: 70px 0px 0px 150px;
 }
 .registerButton{
-    margin-left: 340px;
-    margin-top: 50px;
-    border: none !important;
-    padding: 12px 30px 12px 30px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: chocolate;
 }
 .registerDetails span{
     margin-left: 5px;
@@ -38,4 +30,34 @@
 }
 .register .page p{
 margin-left: 130px;    
+}
+
+.registerButton1,.registerButton{
+    border: 1px solid white;
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+
+}
+.registerButton1{
+    padding: 10px;
+}
+.registerButton{
+    padding: 10px;
+}
+.registerButton1:hover{
+    background-color: black;
+    color: white;
+    border: none;
+}
+.registerButton:hover{
+    background-color: black;
+    color: white;
+    border: none;
+}
+.registerUl{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    list-style-type: none;
 }

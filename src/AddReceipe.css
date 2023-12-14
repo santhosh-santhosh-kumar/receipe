@@ -134,3 +134,6 @@ hr{
   .notification2 .sucess{
       margin-left: 100px;
   }
+  select{
+    width: 200px;
+  }

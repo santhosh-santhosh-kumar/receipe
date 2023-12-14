@@ -1,0 +1,11 @@
+.recomends{
+    margin-top: 30px !important;
+    border-top: 2px solid black;
+    padding-top: 30px;
+}
+.recomends span{
+    font-size: 18px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+}

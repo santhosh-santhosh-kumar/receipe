@@ -7,17 +7,19 @@ import "./Category.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ContextProvide } from "./Context";
-
+import Meallist from "./Meallist";
+import Recomends from "./Recomends.jsx";
 
 function Category() {
   const { id } = useParams();
+  console.log(id)
   const [item, setItem, login, setLogin, user, setUser] =useContext(ContextProvide);
   const nav = useNavigate();
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
   const [category, setCategory] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const perPage = 12;
+  const perPage = 6;
   const lastPage = currentPage * perPage;
   const firstPage = lastPage - perPage;
   const records = category.slice(firstPage, lastPage);
@@ -124,7 +126,7 @@ function Category() {
                       src={item.strMealThumb}
                       class="card-img-top"
                       alt="..."
-                      style={{ height: "190px", width: "195.3px" }}
+                      style={{ height: "190px", width: "196px" }}
                     />
                   </Link>
                   <i
@@ -156,6 +158,7 @@ function Category() {
             );
           })}
         </div>
+<Recomends />
       </div>
     </>
   );

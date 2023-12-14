@@ -5,6 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Details.css";
 import AddItemDetails from "./AddItemDetails";
+import Recomends from "./Recomends";
 
 function Details() {
   const ingredientsDetails = [];
@@ -100,7 +101,7 @@ function Details() {
                           </li>
                         </ul>
                       </div>
-                      <hr></hr>
+                      <hr className="detailsHr"></hr>
   
                       {list == "Ingredients" && (
                         <div className="Ingredients">
@@ -160,6 +161,8 @@ function Details() {
                       )}
                     </div>
                   </div>
+                  <Recomends />
+
                 </div>
               </>
             );    

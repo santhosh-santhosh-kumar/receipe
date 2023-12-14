@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
 
@@ -63,8 +63,7 @@ function Register() {
         }catch(error){
             console.log(error)
         }
-      console.log(values);
-    },
+     }
   });
 
   return (
@@ -141,10 +140,12 @@ function Register() {
             </div>
             </div>
             </div>
-
-            <button type="submit" className="registerButton">Register</button>
-
+           <ul className="registerUl">
+            <li><button type="submit" className="registerButton">Register</button></li>
+            <li><Link to={"/login"} style={{ textDecoration: "none" }} className="registerButton1">Login</Link></li>
+            </ul>
           </form>
+          
         </div>
       </div>
     </>

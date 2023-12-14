@@ -32,10 +32,10 @@ function Profile() {
   }, []);
 
   const handleClick = () => {
-    setLogin(false);
     setLogOut(true)
   };
   const handleNavigate=()=>{
+    setLogin(false);
     nav(`/login`);
   }
   const handleCancel=()=>{
@@ -52,7 +52,7 @@ function Profile() {
       <div className="containerProfile1">
           <div className="userDetails">{profile.firstName} { profile.lastName}</div>
           <div className="userDetails">{profile.Email}</div>
-          <div className="userDetails">Mobile number: {profile.mobileNumber}</div>
+          <div className="userDetails">{profile.mobileNumber}</div>
       </div>
         <span onClick={handleClick}>Logout</span>
       </div>

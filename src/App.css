@@ -35,7 +35,7 @@ body{
   margin-left: 700px;
 }
 .main{
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./assets/pexels-daniel-reche-1556688.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("./assets/pexels-daniel-reche-1556688.jpg") center/cover no-repeat;
   height: 65vh;
   filter: blur(20px);
   -webkit-filter: blur(0px);
