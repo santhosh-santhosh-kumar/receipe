@@ -1,5 +1,5 @@
 .containerupdate{
-   background-color: whitesmoke;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./assets/max-komthongvijit-_RwtD1MrUrw-unsplash.jpg") center/cover no-repeat;
    margin-top: 30px;
    padding-bottom: 30px;
 }
@@ -7,4 +7,11 @@
     margin-top: 30px;
 
   text-transform: uppercase;
+}
+.update label{
+  color: white;
+}
+.update input{
+  background-color: rgba(0, 0, 0, 0.178);
+  color: white;
 }

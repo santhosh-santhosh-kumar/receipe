@@ -128,11 +128,15 @@ function AddItemDetails() {
                           <div className="detailList1">
                             <ul>
                               {item.ingredient.map((data) => {
-                                return (
-                                  <li>
-                                    <i class="fa-solid fa-check"></i> {data}
-                                  </li>
-                                );
+                                console.log(data)
+                                if(data!=item.ingredient[item.ingredient.length-1]){
+                                  return (
+                                    <li>
+                                      <i class="fa-solid fa-check"></i> {data}
+                                    </li>
+                                  );
+  
+                                }
                               })}
                             </ul>
                           </div>
@@ -144,8 +148,7 @@ function AddItemDetails() {
                           <div className="detailList2">
                             <ul>
                               {item.measure.map((data) => {
-                                console.log(data);
-                                if (data != []) {
+                                if(data!=item.measure[item.measure.length-1]){
                                   return (
                                     <li className="intList">
                                       <i class="fa-solid fa-spoon"></i>

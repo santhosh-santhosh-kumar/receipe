@@ -39,6 +39,8 @@ function YourList() {
 
   const handleDelete = async (id) => {
     try {
+      const updateNewItems=newItem.filter((e)=>e.id!==id)
+      setNewItem(updateNewItems)
       const response = await axios.delete(
         "https://6557461abd4bcef8b6125cf6.mockapi.io/practice/" + id
       )

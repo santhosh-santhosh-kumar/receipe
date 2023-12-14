@@ -33,7 +33,7 @@ function Details() {
     };
     fetchItems();
   }, []);
-console.log(fetchError)
+  console.log(fetchError)
   return (
     <>
       {load && <p>Loading...</p>}
