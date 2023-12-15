@@ -7,11 +7,9 @@ import { useParams } from "react-router-dom";
 import "../HomePage/Category.css";
 import "./YourList.css";
 import LoginPage from "../Login/LoginPage";
-import { useNavigate } from "react-router-dom";
 import Recomends from "../Recomends/Recomends";
 
 function YourList() {
-  const nav = useNavigate();
   const [item, setItem, login, setLogin] = useContext(ContextProvide);
   const { id } = useParams();
   const [fetchError, setFetchError] = useState(null);
@@ -39,7 +37,7 @@ function YourList() {
 
     };
     fetchItems();
-  }, []);
+  }, [newItem]);
 
   const handleDelete = async (id) => {
     try {
@@ -95,9 +93,9 @@ function YourList() {
                         to={`/details/${item.MealName}`}
                       >
                         <img
-                          src={item.image}
+                          src={item.image ? item.image : "https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg"}
                           className="card-img-top"
-                          alt="receipe image"
+                          alt="receipe "
                           style={{ height: "190px", width: "100%" }}
                         />
                       </Link>

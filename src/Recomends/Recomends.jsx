@@ -22,15 +22,15 @@ function Recomends() {
           {item.map((item,index) => {
             if(index<12){
                 return (
-                    <div className="col-2">
+                    <div className="col-2 recomendCol">
                       <Link
                         style={{ textDecoration: "none" }}
                         to={`/${item.strCategory}`}
                       >
-                        <div className="card" style={{ width: "15rem;" }}>
+                        <div className="card recomendsCard">
                           <img
                             src={item.strCategoryThumb}
-                            className="card-img-top"
+                            className="card-img-top recomendImage"
                             alt="..."
                           />
                           <div className="card-body">

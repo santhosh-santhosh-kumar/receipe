@@ -11,7 +11,7 @@ function Profile() {
   let [item, setItem, login, setLogin, user, setUser] =
     useContext(ContextProvide);
   const [profile, setprofile] = useState("");
-  const [logOut,setLogOut]=useState(false)
+  const [logOut, setLogOut] = useState(false);
   useEffect(() => {
     const fetchItem = async () => {
       try {
@@ -32,16 +32,16 @@ function Profile() {
   }, []);
 
   const handleClick = () => {
-    setLogOut(true)
+    setLogOut(true);
   };
-  const handleNavigate=()=>{
+  const handleNavigate = () => {
     setLogin(false);
     nav(`/login`);
-  }
-  const handleCancel=()=>{
+  };
+  const handleCancel = () => {
     nav(`/Meal`);
-    setLogOut(false)
-  }
+    setLogOut(false);
+  };
   return (
     <>
       <div className="containerProfile">
@@ -49,21 +49,33 @@ function Profile() {
           <i className="fa-solid fa-user"></i>
         </h1>
         <h4>USER</h4>
-      <div className="containerProfile1">
-          <div className="userDetails">{profile.firstName} { profile.lastName}</div>
+        <div className="containerProfile1">
+          <div className="userDetails">
+            {profile.firstName} {profile.lastName}
+          </div>
           <div className="userDetails">{profile.Email}</div>
           <div className="userDetails">{profile.mobileNumber}</div>
-      </div>
-        <span onClick={handleClick}>Logout</span>
-      </div>
-
-      <div className={`notification4 ${logOut ? "notification5":""}`}>
-          <p className='sucess'>Do you want to log out</p>
-          <p><i className="fa-solid fa-check"></i></p>
-          <span className='close' onClick={handleNavigate}>Conform</span>
-          <span className='close' onClick={handleCancel}>Cancel</span>
         </div>
+        <div className="updateSpan">
+          <span onClick={handleClick}>Logout</span>
+          <Link style={{ textDecoration: "none" }} to={`/profileupdate/${profile.id}`}>
+            <span onClick={handleClick}>Edit</span>
+          </Link>
+        </div>
+      </div>
 
+      <div className={`notification4 ${logOut ? "notification5" : ""}`}>
+        <p className="sucess">Do you want to log out</p>
+        <p>
+          <i className="fa-solid fa-check"></i>
+        </p>
+        <span className="close" onClick={handleNavigate}>
+          Conform
+        </span>
+        <span className="close" onClick={handleCancel}>
+          Cancel
+        </span>
+      </div>
     </>
   );
 }

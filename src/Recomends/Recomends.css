@@ -9,3 +9,15 @@
     display: inline-block;
     margin-bottom: 10px;
 }
+.recomendImage{
+    margin-top: 20px;
+    transition: 1s;
+}
+.recomendCol .recomendImage:hover{
+ width: 200px;
+ height: 100px;
+}
+.recomendsCard{
+    width: 12rem;
+    height: 12rem;
+}

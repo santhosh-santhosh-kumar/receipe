@@ -7,12 +7,8 @@ import "../Details/Details.css"
 
 function AddItemDetails() {
   const [list, setList] = useState("Ingredients");
-  const ingredientsDetails = [];
-  const ingredientsMeasure = [];
-  const includesArray = [];
   const [details, setDetails] = useState([]);
   const { id } = useParams();
-  console.log(id);
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
   useEffect(() => {
@@ -92,12 +88,11 @@ function AddItemDetails() {
                   <div className="row">
                     <div className="col-4">
                       <img
-                        src={item.image}
+                        src={item.image ? item.image :"https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg"}
                         alt="receipe image"
                         className="card-img-top1"
                         style={{ width: "400px", height: "400px" }}
                       />
-                      <i className="fa-regular fa-bookmark fa-bookmark1"></i>
                     </div>
                     <div className="col-8">
                       <hr></hr>

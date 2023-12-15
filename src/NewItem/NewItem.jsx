@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { ContextProvide } from "../Context";
 import { useParams } from "react-router-dom";
 import "../HomePage/Category.css";
 import "./NewItem.css";
@@ -33,6 +31,7 @@ function NewItem() {
     <>
             {
                 newItem.map((item) => {
+                console.log(item.image)
                     if(item.Category.toLowerCase()==id.toLowerCase()){
                 return (
                   <div className="col-2 categoryCol newItemCol">
@@ -45,7 +44,7 @@ function NewItem() {
                           to={`/details/${item.mealName}`}
                         >
                       <img
-                        src={item.image}
+                        src={item.image ? item.image : "https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg"}
                         className="card-img-top"
                         alt="..."
                         style={{height:"190px",width: "100%"}}/>

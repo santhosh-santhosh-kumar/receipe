@@ -11,14 +11,14 @@ function UpdateItem() {
   const nav = useNavigate();
   const [measurement, setMeasurement] = useState([]);
   const [inputData, setInputData] = useState({
-    category: "",
-    mealName: "",
-    authorName: "",
-    source: "",
-    imageUrl: "",
-    ingredient: "",
+    Category: "",
+    MealName: "",
+    author: "",
+    Source: "",
+    image: "",
+    addIngredient: "",
     measure: "",
-    instruction: "",
+    Instructions: "",
   });
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
@@ -127,9 +127,9 @@ function UpdateItem() {
                     type="text"
                     className="form-control"
                     id="inputEmail3"
-                    value={inputData.category}
+                    value={inputData.Category}
                     onChange={(e) =>
-                      setInputData({ ...inputData, category: e.target.value })
+                      setInputData({ ...inputData, Category: e.target.value })
                     }
                   />
                   <br></br>
@@ -145,9 +145,9 @@ function UpdateItem() {
                     type="text"
                     className="form-control"
                     id="inputEmail3"
-                    value={inputData.mealName}
+                    value={inputData.MealName}
                     onChange={(e) =>
-                      setInputData({ ...inputData, mealName: e.target.value })
+                      setInputData({ ...inputData, MealName: e.target.value })
                     }
                   />
                   <br></br>
@@ -163,9 +163,9 @@ function UpdateItem() {
                     type="text"
                     className="form-control"
                     id="inputEmail3"
-                    value={inputData.authorName}
+                    value={inputData.author}
                     onChange={(e) =>
-                      setInputData({ ...inputData, authorName: e.target.value })
+                      setInputData({ ...inputData, author: e.target.value })
                     }
                   />
                   <br></br>
@@ -181,9 +181,9 @@ function UpdateItem() {
                     type="text"
                     className="form-control"
                     id="inputEmail3"
-                    value={inputData.source}
+                    value={inputData.Source}
                     onChange={(e) =>
-                      setInputData({ ...inputData, source: e.target.value })
+                      setInputData({ ...inputData, Source: e.target.value })
                     }
                   />
                   <br></br>
@@ -199,9 +199,9 @@ function UpdateItem() {
                     type="text"
                     className="form-control"
                     id="inputEmail4"
-                    value={inputData.imageUrl}
+                    value={inputData.image}
                     onChange={(e) =>
-                      setInputData({ ...inputData, imageUrl: e.target.value })
+                      setInputData({ ...inputData, image: e.target.value })
                     }
                   />
                   <br></br>
@@ -278,7 +278,7 @@ function UpdateItem() {
                 <textarea
                   type="text"
                   className="commends textCommends"
-                  value={inputData.instruction}
+                  value={inputData.Instructions}
                   rows={10}
                   cols={100}
                   name="Instructions"

@@ -9,38 +9,11 @@ import LoginPage from "../Login/LoginPage";
 import { useFormik } from "formik";
 
 function AddReceipe() {
-  const option = [
-    { value: "Beef", label: "Beef" },
-    { value: "Chicken", label: "Chicken" },
-    { value: "Dessert", label: "Dessert" },
-    { value: "Lamb", label: "Lamb" },
-    { value: "Miscellaneous", label: "Miscellaneous" },
-    { value: "Pasta", label: "Pasta" },
-    { value: "Pork", label: "Pork" },
-    { value: "Seafood", label: "Seafood" },
-    { value: "Side", label: "Side" },
-    { value: "Starter", label: "Starter" },
-    { value: "Vegan", label: "Vegan" },
-    { value: "Vegetarian", label: "Vegetarian" },
-    { value: "Breakfast", label: "Breakfast" },
-    { value: "Goat", label: "Goat" },
-  ];
-
   const nav = useNavigate();
   const [measurement, setMeasurement] = useState([]);
   const [value, setValue] = useState([]);
   const [item, setItem, login, setLogin] = useContext(ContextProvide);
   const [notification, setNotification] = useState(false);
-  const [inputData, setInputData] = useState({
-    category: "",
-    mealName: "",
-    authorName: "",
-    source: "",
-    imageUrl: "",
-    ingredient: "",
-    measure: "",
-    instruction: "",
-  });
   const formik = useFormik({
     initialValues: {
       Category: "",
@@ -48,7 +21,7 @@ function AddReceipe() {
       author: "",
       Source: "",
       image: "",
-      addIngrediants: [],
+      addIngrediants: {},
       addMeasure: "",
       Instructions: "",
     },
@@ -75,11 +48,6 @@ function AddReceipe() {
       return error;
     },
     onSubmit: async (values) => {
-      // const data = [...value];
-      // data[i] = element.target.value;
-      // setValue(data);
-      // setInputData({ ...values, addIngrediants: value });
-      console.log(values.addIngrediants)
       try {
         await axios.post(
           "https://6557461abd4bcef8b6125cf6.mockapi.io/practice",
@@ -112,7 +80,7 @@ function AddReceipe() {
   //   setInputData({ ...inputData, measure: measurement });
   // }
   const handleNavigate = () => {
-    nav(`/${inputData.category}`);
+    nav(`/${formik.values.Category}`);
   };
   return (
     <>
@@ -313,12 +281,6 @@ function AddReceipe() {
                       name="Instructions"
                       value={formik.values.Instructions}
                       onChange={formik.handleChange}
-                      // onChange={(e) =>
-                      //   setInputData({
-                      //     ...inputData,
-                      //     instruction: e.target.value,
-                      //   })
-                      // }
                     ></textarea>
                     <span style={{ color: "red" }}>
                       {formik.errors.Instructions}
@@ -336,7 +298,7 @@ function AddReceipe() {
             className={`notification2 ${notification ? "notification3" : ""}`}
           >
             <p className="sucess">successfully</p>
-            <p className="itemNoti">{`Item Added in ${inputData.category} category`}</p>
+            <p className="itemNoti">{`Item Added in ${formik.values.Category} category`}</p>
             <p>
               <i className="fa-solid fa-check"></i>
             </p>

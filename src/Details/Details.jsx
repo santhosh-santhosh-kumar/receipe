@@ -87,9 +87,9 @@ function Details() {
                         className="card-img-top1"
                         style={{ width: "400px", height: "400px" }}
                       />
-                      <i className="fa-regular fa-bookmark fa-bookmark1"></i>
                     </div>
                     <div className="col-8">
+                      
                       <div className="listOfDetails">
                         <ul>
                           <li onClick={() => setList("Ingredients")} className={list === "Ingredients" ? "active2" : ""}>

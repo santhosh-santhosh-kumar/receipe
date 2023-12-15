@@ -13,7 +13,7 @@
     right: 10px;
     font-size: 15px;
     color: black;
-    background-color: white;
+background-color: chocolate;
     padding: 10px;
     border-radius: 100%;
     display: none;
@@ -35,4 +35,7 @@
 }
 .yourListReceipe{
     color: black;
+}
+.fa-pen-to-square:hover{
+    color: chocolate;
 }

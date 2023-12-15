@@ -14,6 +14,7 @@ import Saved from './Saved/Saved';
 import LoginPage from './Login/LoginPage';
 import Profile from './Login/Profile';
 import Register from './Login/Register';
+import UpdateProfile from './Login/UpdateProfile';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
   <Route path='/saved' element={<Saved />}></Route>
   <Route path='/Profile' element={<Profile />}></Route>
   <Route path='/register' element={<Register />}></Route>
+  <Route path='/profileupdate/:id' element={<UpdateProfile />}></Route>
 </Routes>
 </BrowserRouter>
 </Context>

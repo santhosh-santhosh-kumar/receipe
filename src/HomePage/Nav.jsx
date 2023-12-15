@@ -9,6 +9,7 @@ import axios from "axios";
 function Nav() {
   const [item, setItem, login, setLogin, user, setUser] =
     useContext(ContextProvide);
+    const [count,setCount]=useState("")
   const [userName,setUserName]=useState("")
     useEffect(() => {
       const fetchItem = async () => {
@@ -28,6 +29,24 @@ function Nav() {
       };
       fetchItem();
     }, []);
+    useEffect(() => {
+      const fetchItems = async () => {
+        try {
+          const response = await axios.get(
+            "https://6557461abd4bcef8b6125cf6.mockapi.io/practice"
+          );
+          if (response.data == null) {
+            throw Error("No Items");
+          }
+          setCount(response.data);
+        } catch (err) {
+          setCount(0)  
+        } 
+  
+      };
+      fetchItems();
+    },[]);
+  
   
   return (
     <>
@@ -49,13 +68,13 @@ function Nav() {
                 <li>
                   {" "}
                   <Link to={"/yourList"} className="nav-link" href="#">
-                    Your Receipe
+                    Your Receipe {login && <span>({count.length})</span>}
                   </Link>
                 </li>
                 <li>
                   {" "}
                   <Link to={"/saved"} className="nav-link" href="#">
-                    Saved
+                    Saved{login && <span>({count.length})</span>}
                   </Link>
                 </li>
                 <li>
