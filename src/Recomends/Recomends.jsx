@@ -2,12 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import NewItem from "./NewItem.jsx";
-import "./Category.css";
+import NewItem from "../NewItem/NewItem.jsx";
+import "../HomePage/Category.css";
 import "./Recomends.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import { ContextProvide } from "../Context.jsx";
 
 function Recomends() {
   const [item, setItem, login, setLogin, user, setUser] =
@@ -27,14 +27,14 @@ function Recomends() {
                         style={{ textDecoration: "none" }}
                         to={`/${item.strCategory}`}
                       >
-                        <div class="card" style={{ width: "15rem;" }}>
+                        <div className="card" style={{ width: "15rem;" }}>
                           <img
                             src={item.strCategoryThumb}
-                            class="card-img-top"
+                            className="card-img-top"
                             alt="..."
                           />
-                          <div class="card-body">
-                            <p class="card-title mealCardTitle">{item.strCategory}</p>
+                          <div className="card-body">
+                            <p className="card-title mealCardTitle">{item.strCategory}</p>
                           </div>
                         </div>
                       </Link>

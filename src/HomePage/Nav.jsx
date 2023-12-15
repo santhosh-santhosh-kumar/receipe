@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
-import Profile from "./Profile";
+import { ContextProvide } from "../Context";
+import Profile from "../Login/Profile";
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -34,7 +34,7 @@ function Nav() {
       <div className="navBar">
         <ul>
           <li className="logo">
-            <Link class="navbar-brand" to={"/Meal"}>
+            <Link className="navbar-brand" to={"/Meal"}>
               <p className="title">EATERY</p>
             </Link>
           </li>
@@ -42,27 +42,27 @@ function Nav() {
             <div className="row">
               <div className={`col navBarCol ${login ? "topList1" : ""}`}>
                 <li>
-                  <Link to={"/addReceipe"} class="nav-link home" href="#">
+                  <Link to={"/addReceipe"} className="nav-link home" href="#">
                     Add Receipe
                   </Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to={"/yourList"} class="nav-link" href="#">
+                  <Link to={"/yourList"} className="nav-link" href="#">
                     Your Receipe
                   </Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to={"/saved"} class="nav-link" href="#">
+                  <Link to={"/saved"} className="nav-link" href="#">
                     Saved
                   </Link>
                 </li>
                 <li>
-            <Link to={`/${login ? "Profile" : "login"}`} class="nav-link">
+            <Link to={`/${login ? "Profile" : "login"}`} className="nav-link">
               {login ? (
                 <>
-                  <i class="fa-solid fa-user navUser"></i>
+                  <i className="fa-solid fa-user navUser"></i>
                   <span className="loginUser">{userName}</span>
                 </>
               ) : (

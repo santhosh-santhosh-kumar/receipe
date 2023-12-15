@@ -1,19 +1,19 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Header from './Header';
-import Meal from './Meal';
+import Header from './FrontPage/Header';
+import Meal from './HomePage/Meal';
 import { Context } from './Context';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import YourList from './YourList';
-import AddReceipe from './AddReceipe';
-import Category from './Category';
-import Details from './Details';
-import UpdateItem from './UpdateItem';
-import Saved from './Saved';
-import LoginPage from './LoginPage';
-import Profile from './Profile';
-import Register from './Register';
+import YourList from './YourList/YourList';
+import AddReceipe from './Additems/AddReceipe';
+import Category from './HomePage/Category';
+import Details from './Details/Details';
+import UpdateItem from './UpdateItem/UpdateItem';
+import Saved from './Saved/Saved';
+import LoginPage from './Login/LoginPage';
+import Profile from './Login/Profile';
+import Register from './Login/Register';
 
 function App() {
   return (

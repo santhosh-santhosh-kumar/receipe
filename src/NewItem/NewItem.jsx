@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import { ContextProvide } from "../Context";
 import { useParams } from "react-router-dom";
-import "./Category.css";
+import "../HomePage/Category.css";
 import "./NewItem.css";
 
 function NewItem() {
@@ -33,11 +33,11 @@ function NewItem() {
     <>
             {
                 newItem.map((item) => {
-                    if(item.category.toLowerCase()==id.toLowerCase()){
+                    if(item.Category.toLowerCase()==id.toLowerCase()){
                 return (
                   <div className="col-2 categoryCol newItemCol">
                     <div
-                      class="card"
+                      className="card"
                       style={{ width: "1rem !important;", height: "18.5rem"}}
                     >
                        <Link
@@ -45,28 +45,28 @@ function NewItem() {
                           to={`/details/${item.mealName}`}
                         >
                       <img
-                        src={item.imageUrl}
-                        class="card-img-top"
+                        src={item.image}
+                        className="card-img-top"
                         alt="..."
                         style={{height:"190px",width: "100%"}}/>
                        </Link>
-                       <i class="fa-solid fa-user new-user"></i>
-                      <div class="card-body">
+                       <i className="fa-solid fa-user new-user"></i>
+                      <div className="card-body">
                         <Link
                           style={{ textDecoration: "none" }}
-                          to={`/details/${item.mealName}`}
+                          to={`/details/${item.MealName}`}
                         >
                           <p className="categoryArea">
-                          <i class="fa-regular fa-star"></i>
-                          <i class="fa-regular fa-star"></i>
-                          <i class="fa-regular fa-star"></i>
-                          <i class="fa-regular fa-star"></i>
-                          <i class="fa-regular fa-star"></i>
+                          <i className="fa-regular fa-star"></i>
+                          <i className="fa-regular fa-star"></i>
+                          <i className="fa-regular fa-star"></i>
+                          <i className="fa-regular fa-star"></i>
+                          <i className="fa-regular fa-star"></i>
                         </p>
                             <p className="categoryCard">
-                            {item.mealName.length > 19
-                              ? item.mealName.slice(0, 19)
-                              : item.mealName}
+                            {item.MealName.length > 19
+                              ? item.MealName.slice(0, 19)
+                              : item.MealName}
                           </p>
                         </Link>
                       </div>

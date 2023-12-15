@@ -1,5 +1,5 @@
 import React from "react";
-import "./AddReceipe.css";
+import "../Additems/AddReceipe.css"
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -86,12 +86,12 @@ function UpdateItem() {
             <ul>
               <li>
                 <Link to={"/Meal"}>
-                  <i class="fa-solid fa-house"></i>
+                  <i className="fa-solid fa-house"></i>
                 </Link>
               </li>
               <li>
-                <i class="fa-solid fa-chevron-right"></i>
-                <i class="fa-solid fa-chevron-right"></i>
+                <i className="fa-solid fa-chevron-right"></i>
+                <i className="fa-solid fa-chevron-right"></i>
               </li>
               <li>
                 <Link style={{ textDecoration: "none" }} to={`/Meal`}>
@@ -99,8 +99,8 @@ function UpdateItem() {
                 </Link>
               </li>
               <li>
-                <i class="fa-solid fa-chevron-right"></i>
-                <i class="fa-solid fa-chevron-right"></i>
+                <i className="fa-solid fa-chevron-right"></i>
+                <i className="fa-solid fa-chevron-right"></i>
               </li>
               <li>
                 <h6 className="pageCategory">UPDATE</h6>
@@ -118,14 +118,14 @@ function UpdateItem() {
             </div>
             <hr></hr>
             <form onSubmit={handleSubmit} className="update">
-              <div class="form-group row ">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">
+              <div className="form-group row ">
+                <label for="inputEmail3" className="col-sm-2 col-form-label">
                   Category
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputEmail3"
                     value={inputData.category}
                     onChange={(e) =>
@@ -136,14 +136,14 @@ function UpdateItem() {
                 </div>
               </div>
 
-              <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">
+              <div className="form-group row">
+                <label for="inputEmail3" className="col-sm-2 col-form-label">
                   MealName
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputEmail3"
                     value={inputData.mealName}
                     onChange={(e) =>
@@ -154,14 +154,14 @@ function UpdateItem() {
                 </div>
               </div>
 
-              <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">
+              <div className="form-group row">
+                <label for="inputEmail3" className="col-sm-2 col-form-label">
                   Author Name
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputEmail3"
                     value={inputData.authorName}
                     onChange={(e) =>
@@ -172,14 +172,14 @@ function UpdateItem() {
                 </div>
               </div>
 
-              <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">
+              <div className="form-group row">
+                <label for="inputEmail3" className="col-sm-2 col-form-label">
                   Source
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputEmail3"
                     value={inputData.source}
                     onChange={(e) =>
@@ -190,14 +190,14 @@ function UpdateItem() {
                 </div>
               </div>
 
-              <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">
+              <div className="form-group row">
+                <label for="inputEmail3" className="col-sm-2 col-form-label">
                   Image URL
                 </label>
-                <div class="col-sm-8">
+                <div className="col-sm-8">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="inputEmail4"
                     value={inputData.imageUrl}
                     onChange={(e) =>

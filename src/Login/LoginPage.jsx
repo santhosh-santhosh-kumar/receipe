@@ -3,7 +3,7 @@ import Register from "./Register";
 import Login from "./Login";
 import "./LoginPage.css";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import { ContextProvide } from "../Context";
 import Profile from "./Profile";
 import { useNavigate } from "react-router-dom";
 
@@ -17,7 +17,7 @@ function LoginPage() {
       { <div className="loginMain">
         <div className="loginPage">
             <div className="page">
-            <i class="fa-solid fa-user"></i>
+            <i className="fa-solid fa-user"></i>
             <p>Login</p>
             {/* <h5 onClick={() => setView("Login")}>Login</h5>
           <h5 onClick={() => setView("Register")}>Register</h5>                 */}

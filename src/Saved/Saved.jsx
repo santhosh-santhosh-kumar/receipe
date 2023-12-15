@@ -4,11 +4,11 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
-import LoginPage from "./LoginPage";
+import { ContextProvide } from "../Context";
+import LoginPage from "../Login/LoginPage";
 import "./Saved.css";
 import { useNavigate } from "react-router-dom";
-import Recomends from "./Recomends";
+import Recomends from "../Recomends/Recomends";
 
 
 function Saved() {
@@ -72,13 +72,13 @@ function Saved() {
             <ul>
               <li>
                 <Link style={{ textDecoration: "none" }} to={"/Meal"}>
-                  <i class="fa-solid fa-house"></i>
+                  <i className="fa-solid fa-house"></i>
                 </Link>
               </li>
 
               <li>
-                <i class="fa-solid fa-chevron-right"></i>
-                <i class="fa-solid fa-chevron-right"></i>
+                <i className="fa-solid fa-chevron-right"></i>
+                <i className="fa-solid fa-chevron-right"></i>
               </li>
 
               <li>
@@ -118,7 +118,7 @@ function Saved() {
                 return (
                   <div className="col-2 categoryCol">
                     <div
-                      class="card savedCol"
+                      className="card savedCol"
                       style={{ width: "1rem !important;", height: "18.5rem" }}
                     >
                       <Link
@@ -127,24 +127,24 @@ function Saved() {
                       >
                         <img
                           src={item.strMealThumb}
-                          class="card-img-top"
+                          className="card-img-top"
                           alt="..."
                           style={{ height: "190px", width: "100%" }}
                         />
                       </Link>
                       <i
-                        class="fa-solid fa-trash"
+                        className="fa-solid fa-trash"
                         onClick={() => {
                           handleDelete(item.id);
                         }}
                       ></i>
-                      <div class="card-body">
+                      <div className="card-body">
                         <p className="categoryArea">
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-solid fa-star"></i>
-                          <i class="fa-regular fa-star"></i>
+                          <i className="fa-solid fa-star"></i>
+                          <i className="fa-solid fa-star"></i>
+                          <i className="fa-solid fa-star"></i>
+                          <i className="fa-solid fa-star"></i>
+                          <i className="fa-regular fa-star"></i>
                         </p>
                         <Link
                         style={{ textDecoration: "none" }}

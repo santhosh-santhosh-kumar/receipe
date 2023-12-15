@@ -4,28 +4,27 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
-import LoginPage from "./LoginPage";
+import { ContextProvide } from "../Context";
+import LoginPage from "../Login/LoginPage";
 import { useFormik } from "formik";
-import SelectTag from "./SelectTag";
 
 function AddReceipe() {
-const option=[
-  {value:"Beef",label:"Beef"},
-  {value:"Chicken",label:"Chicken"},
-  {value:"Dessert",label:"Dessert"},
-  {value:"Lamb",label:"Lamb"},
-  {value:"Miscellaneous",label:"Miscellaneous"},
-  {value:"Pasta",label:"Pasta"},
-  {value:"Pork",label:"Pork"},
-  {value:"Seafood",label:"Seafood"},
-  {value:"Side",label:"Side"},
-  {value:"Starter",label:"Starter"},
-  {value:"Vegan",label:"Vegan"},
-  {value:"Vegetarian",label:"Vegetarian"},
-  {value:"Breakfast",label:"Breakfast"},
-  {value:"Goat",label:"Goat"}
-]
+  const option = [
+    { value: "Beef", label: "Beef" },
+    { value: "Chicken", label: "Chicken" },
+    { value: "Dessert", label: "Dessert" },
+    { value: "Lamb", label: "Lamb" },
+    { value: "Miscellaneous", label: "Miscellaneous" },
+    { value: "Pasta", label: "Pasta" },
+    { value: "Pork", label: "Pork" },
+    { value: "Seafood", label: "Seafood" },
+    { value: "Side", label: "Side" },
+    { value: "Starter", label: "Starter" },
+    { value: "Vegan", label: "Vegan" },
+    { value: "Vegetarian", label: "Vegetarian" },
+    { value: "Breakfast", label: "Breakfast" },
+    { value: "Goat", label: "Goat" },
+  ];
 
   const nav = useNavigate();
   const [measurement, setMeasurement] = useState([]);
@@ -44,41 +43,54 @@ const option=[
   });
   const formik = useFormik({
     initialValues: {
-      Category: "sdsf",
+      Category: "",
       MealName: "",
       author: "",
       Source: "",
       image: "",
-      addIngrediants: "",
+      addIngrediants: [],
       addMeasure: "",
       Instructions: "",
     },
     validate: (values) => {
-      let error={};
-
+      let error = {};
+      // if (values.Category == "") {
+      //   error.Category = "Select category";
+      // }
+      // if (values.MealName == "") {
+      //   error.MealName = "Required";
+      // }
+      // if (values.author == "") {
+      //   error.author = "Required";
+      // }
+      // if (values.image == "") {
+      //   error.image = "Required";
+      // }
+      // if (values.Source == "") {
+      //   error.Source = "Required";
+      // }
+      // if (values.Instructions == "") {
+      //   error.Instructions = "Required";
+      // }
+      return error;
     },
     onSubmit: async (values) => {
-      try{
-          await axios.post("https://6557461abd4bcef8b6125cf6.mockapi.io/practice",values)
-          alert("post")
-          nav('/Meal')
-          setNotification(true);
-      }catch(error){
-          console.log(error)
+      // const data = [...value];
+      // data[i] = element.target.value;
+      // setValue(data);
+      // setInputData({ ...values, addIngrediants: value });
+      console.log(values.addIngrediants)
+      try {
+        await axios.post(
+          "https://6557461abd4bcef8b6125cf6.mockapi.io/practice",
+          values
+        );
+        setNotification(true);
+      } catch (error) {
+        console.log(error);
       }
-    console.log(values);
-  },
-
+    },
   });
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   axios.post(
-  //     "https://6557461abd4bcef8b6125cf6.mockapi.io/practice",
-  //     inputData
-  //   );
-  //   setNotification(true);
-  // };
   function addInputTg() {
     let value1 = [...value, []];
     setValue(value1);
@@ -87,18 +99,18 @@ const option=[
     let value2 = [...measurement, []];
     setMeasurement(value2);
   }
-  function handleChangeIngredient(element, i) {
-    const data = [...value];
-    data[i] = element.target.value;
-    setValue(data);
-    setInputData({ ...inputData, ingredient: value });
-  }
-  function handleChangeMeasure(element, i) {
-    const data = [...measurement];
-    data[i] = element.target.value;
-    setMeasurement(data);
-    setInputData({ ...inputData, measure: measurement });
-  }
+  // function handleChangeIngredient(element, i) {
+  //   const data = [...value];
+  //   data[i] = element.target.value;
+  //   setValue(data);
+  //   setInputData({ ...inputData, ingredient: value });
+  // }
+  // function handleChangeMeasure(element, i) {
+  //   const data = [...measurement];
+  //   data[i] = element.target.value;
+  //   setMeasurement(data);
+  //   setInputData({ ...inputData, measure: measurement });
+  // }
   const handleNavigate = () => {
     nav(`/${inputData.category}`);
   };
@@ -114,120 +126,125 @@ const option=[
                 </div>
                 <hr></hr>
                 <form onSubmit={formik.handleSubmit}>
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">
+                  <div className="form-group row">
+                    <label htmlFor="Category" className="col-sm-2 col-form-label">
                       Category
                     </label>
-                    <div class="col-sm-8">
-                      <SelectTag 
-                      option={option}
-                      value={formik.values.Category}
-                      onchange={value=>formik.setFieldValue('Category',value.value)}
-                      />
-                      {/* <input
-                        type="text"
-                        class="form-control"
-                        id="inputEmail3"
+                    <div className="col-sm-8">
+                      <select
+                        id="Cetegory"
                         name="Category"
                         value={formik.values.Category}
                         onChange={formik.handleChange}
-                        // onChange={(e) =>
-                        //   setInputData({ ...inputData, category: e.target.value })
-                        // }
-                      /> */}
+                        onBlur={formik.handleBlur}
+                      >
+                        <option value="">...Select Category...</option>
+                        <option value="Beef">Beef</option>
+                        <option value="Chicken">Chicken</option>
+                        <option value="Dessert">Dessert</option>
+                        <option value="Lamb">Lamb</option>
+                        <option value="Miscellanee">Miscellanee</option>
+                        <option value="Pasta">Pasta</option>
+                        <option value="Pork">Pork</option>
+                        <option value="Seafood">Seafood</option>
+                        <option value="Side">Side</option>
+                        <option value="Starter">Starter</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Goat">Goat</option>
+                      </select>
+                      <span style={{ color: "red" }}>
+                        {formik.errors.Category}
+                      </span>
+
                       <br></br>
                     </div>
                   </div>
 
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">
+                  <div className="form-group row">
+                    <label htmlFor="MealName" className="col-sm-2 col-form-label">
                       MealName
                     </label>
-                    <div class="col-sm-8">
+                    <div className="col-sm-8">
                       <input
                         type="text"
-                        class="form-control"
-                        id="inputEmail3"
+                        className="form-control"
+                        id="MealName"
                         name="MealName"
                         value={formik.values.MealName}
                         onChange={formik.handleChange}
-                        // onChange={(e) =>
-                        //   setInputData({ ...inputData, mealName: e.target.value })
-                        // }
                       />
+                      <span style={{ color: "red" }}>
+                        {formik.errors.MealName}
+                      </span>
                       <br></br>
                     </div>
                   </div>
 
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">
+                  <div className="form-group row">
+                    <label htmlFor="author" className="col-sm-2 col-form-label">
                       Author Name
                     </label>
-                    <div class="col-sm-8">
+                    <div className="col-sm-8">
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="author"
-                        id="inputEmail3"
+                        id="author"
                         value={formik.values.author}
-                        // onChange={(e) =>
-                        //   setInputData({
-                        //     ...inputData,
-                        //     authorName: e.target.value,
-                        //   })
-                        // }
                         onChange={formik.handleChange}
                       />
+                      <span style={{ color: "red" }}>
+                        {formik.errors.MealName}
+                      </span>
                       <br></br>
                     </div>
                   </div>
 
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">
+                  <div className="form-group row">
+                    <label htmlFor="Source" className="col-sm-2 col-form-label">
                       Source
                     </label>
-                    <div class="col-sm-8">
+                    <div className="col-sm-8">
                       <input
                         type="text"
-                        class="form-control"
-                        id="inputEmail3"
+                        className="form-control"
+                        id="Source"
                         name="Source"
                         value={formik.values.Source}
-                        // onChange={(e) =>
-                        //   setInputData({ ...inputData, source: e.target.value })
-                        // }
                         onChange={formik.handleChange}
                       />
+                      <span style={{ color: "red" }}>
+                        {formik.errors.Source}
+                      </span>
                       <br></br>
                     </div>
                   </div>
 
-                  <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">
+                  <div className="form-group row">
+                    <label htmlFor="image" className="col-sm-2 col-form-label">
                       Image URL
                     </label>
-                    <div class="col-sm-8">
+                    <div className="col-sm-8">
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         name="image"
-                        id="inputEmail4"
+                        id="image"
                         value={formik.values.image}
-                        // onChange={(e) =>
-                        //   setInputData({
-                        //     ...inputData,
-                        //     imageUrl: e.target.value,
-                        //   })
-                        // }
                         onChange={formik.handleChange}
                       />
+                      <span style={{ color: "red" }}>
+                        {formik.errors.author}
+                      </span>
                       <br></br>
                     </div>
                   </div>
 
                   <div className="combine">
                     <div className="ingrediant">
-                      <label htmlFor="ingrediants" className="addLabel">
+                      <label htmlFor="addIngrediants" className="addLabel">
                         Ingrediants{" "}
                         <span
                           className="IngrediantsButton"
@@ -239,13 +256,15 @@ const option=[
 
                       <br></br>
                       {value.map((e, i) => {
+                        console.log(e)
+                        console.log(formik.values.addIngrediants)
                         return (
                           <div>
                             <input
                               type="text"
                               className="ingrediants"
-                              id="ingrediants"
-                              value={formik.values.addIngrediants}
+                              id="addIngrediants"
+                              // value={formik.values.addIngrediants}
                               name="addIngrediants"
                               onChange={formik.handleChange}
                               // onChange={(e) => handleChangeIngredient(e, i)}
@@ -301,7 +320,12 @@ const option=[
                       //   })
                       // }
                     ></textarea>
-                    <button className="addReceipeButton">Add</button>
+                    <span style={{ color: "red" }}>
+                      {formik.errors.Instructions}
+                    </span>
+                    <button type="submit" className="addReceipeButton">
+                      Add
+                    </button>
                   </div>
                 </form>
               </div>
@@ -314,7 +338,7 @@ const option=[
             <p className="sucess">successfully</p>
             <p className="itemNoti">{`Item Added in ${inputData.category} category`}</p>
             <p>
-              <i class="fa-solid fa-check"></i>
+              <i className="fa-solid fa-check"></i>
             </p>
             <span className="close" onClick={handleNavigate}>
               See Add item

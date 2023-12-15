@@ -3,7 +3,7 @@ import "./login.css";
 import { useFormik } from "formik";
 import axios from 'axios';
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import { ContextProvide } from "../Context";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import Profile from './Profile';
@@ -70,7 +70,7 @@ function Login() {
     
     <div className={`notification ${login ? "notification1":""}`}>
           <p className='sucess'>successfully</p>
-          <p><i class="fa-solid fa-check"></i></p>
+          <p><i className="fa-solid fa-check"></i></p>
           <span className='close' onClick={handleNavigate}>Continue</span>
         </div>
 

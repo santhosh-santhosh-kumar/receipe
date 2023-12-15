@@ -32,7 +32,7 @@ function Meal() {
               }
             ></input>
             <Link to={`/${search}`}>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass fa-magnifying-glass1"></i>
             </Link>
             <div className="navText">
             <h2 className="homeHeading">What are your favorite cuisines?</h2>
@@ -40,14 +40,14 @@ function Meal() {
             </div>
           </div>
           <div className={`suggestion ${display===true ? "blockLevel" : "hideLevel"}`}>
-            <ul>
+            <ul className="sug">
               {filterArray.map((item)=>{
                 if(item.toLocaleLowerCase().includes(search.toLowerCase())){
                   return (
                     <li onClick={e=>{
                       setSearch(item)
                       setDisplay(false)
-                    }}>{item}</li>
+                    }}><i className="fa-solid fa-magnifying-glass fa-magnifying-glass2"></i>{item}</li>
                   )
                 }
               })}

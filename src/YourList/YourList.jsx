@@ -2,13 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import { ContextProvide } from "../Context";
 import { useParams } from "react-router-dom";
-import "./Category.css";
+import "../HomePage/Category.css";
 import "./YourList.css";
-import LoginPage from "./LoginPage";
+import LoginPage from "../Login/LoginPage";
 import { useNavigate } from "react-router-dom";
-import Recomends from "./Recomends";
+import Recomends from "../Recomends/Recomends";
 
 function YourList() {
   const nav = useNavigate();
@@ -66,12 +66,12 @@ function YourList() {
                 <ul>
                   <li>
                     <Link to={"/Meal"}>
-                      <i class="fa-solid fa-house"></i>
+                      <i className="fa-solid fa-house"></i>
                     </Link>
                   </li>
                   <li>
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i className="fa-solid fa-chevron-right"></i>
+                    <i className="fa-solid fa-chevron-right"></i>
                   </li>
                   <li>
                     <h6 className="pageCategory">YOURLIST</h6>
@@ -87,30 +87,30 @@ function YourList() {
                 return (
                   <div className="col-2 categoryCol">
                     <div
-                      class="card yourListCard"
+                      className="card yourListCard"
                       style={{ width: "1rem !important;", height: "17.5rem" }}
                     >
                       <Link
                         style={{ textDecoration: "none" }}
-                        to={`/details/${item.mealName}`}
+                        to={`/details/${item.MealName}`}
                       >
                         <img
-                          src={item.imageUrl}
-                          class="card-img-top"
-                          alt="..."
+                          src={item.image}
+                          className="card-img-top"
+                          alt="receipe image"
                           style={{ height: "190px", width: "100%" }}
                         />
                       </Link>
                       <i
-                        class="fa-solid fa-trash-can"
+                        className="fa-solid fa-trash-can"
                         onClick={() => {
                           handleDelete(item.id);
                         }}
                       ></i>{" "}
-                      <div class="card-body">
+                      <div className="card-body">
                         <Link
                           style={{ textDecoration: "none" }}
-                          to={`/details/${item.mealName}`}
+                          to={`/details/${item.MealName}`}
                         >
                           <span className="yourListReceipe">Receipes</span>
                         </Link>
@@ -119,15 +119,15 @@ function YourList() {
                           to={`/update/${item.id}`}
                         >
                           <span className="categoryCard yourListEdit">
-                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i className="fa-regular fa-pen-to-square"></i>
                           </span>
                         </Link>
                         <Link
                           style={{ textDecoration: "none" }}
-                          to={`/details/${item.mealName}`}
+                          to={`/details/${item.MealName}`}
                         >
                           <p className="categoryArea">
-                            <strong>{item.mealName}</strong>
+                            <strong>{item.MealName}</strong>
                           </p>
                         </Link>
                       </div>

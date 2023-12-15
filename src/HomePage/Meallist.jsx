@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import { ContextProvide } from "../Context";
 import { Link } from "react-router-dom";
 import Category from "./Category";
 
@@ -17,14 +17,14 @@ function Meallist() {
                   style={{ textDecoration: "none" }}
                   to={`/${item.strCategory}`}
                 >
-                  <div class="card mealCard" style={{ width: "20rem;" }}>
+                  <div className="card mealCard" style={{ width: "20rem;" }}>
                     <img
                       src={item.strCategoryThumb}
-                      class="card-img-top"
+                      className="card-img-top"
                       alt="..."
                     />
-                    <div class="card-body">
-                      <p class="card-title mealCardTitle">{item.strCategory}</p>
+                    <div className="card-body">
+                      <p className="card-title mealCardTitle">{item.strCategory}</p>
                     </div>
                   </div>
                 </Link>

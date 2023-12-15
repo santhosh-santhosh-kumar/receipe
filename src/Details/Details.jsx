@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Details.css";
-import AddItemDetails from "./AddItemDetails";
-import Recomends from "./Recomends";
+import AddItemDetails from "../Additems/AddItemDetails";
+import Recomends from "../Recomends/Recomends";
 
 function Details() {
   const ingredientsDetails = [];
@@ -52,12 +52,12 @@ function Details() {
                       <ul>
                         <li>
                           <Link to={"/Meal"}>
-                            <i class="fa-solid fa-house"></i>
+                            <i className="fa-solid fa-house"></i>
                           </Link>
                         </li>
                         <li>
-                          <i class="fa-solid fa-chevron-right"></i>
-                          <i class="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
                           <Link
@@ -68,8 +68,8 @@ function Details() {
                           </Link>
                         </li>
                         <li>
-                          <i class="fa-solid fa-chevron-right"></i>
-                          <i class="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
                           <h6 className="pageCategory">{item.strCategory}</h6>
@@ -84,10 +84,10 @@ function Details() {
                     <div className="col-4">
                       <img
                         src={item.strMealThumb}
-                        class="card-img-top1"
+                        className="card-img-top1"
                         style={{ width: "400px", height: "400px" }}
                       />
-                      <i class="fa-regular fa-bookmark fa-bookmark1"></i>
+                      <i className="fa-regular fa-bookmark fa-bookmark1"></i>
                     </div>
                     <div className="col-8">
                       <div className="listOfDetails">
@@ -114,7 +114,7 @@ function Details() {
                               })}
                               {ingredientsDetails.map((data) => {
                                 if (data != ""&&data != " "&&data !=null) {
-                                  return <li><i class="fa-solid fa-check"></i>{data}</li>;
+                                  return <li><i className="fa-solid fa-check"></i>{data}</li>;
                                 }
                               })}
                             </ul>
@@ -137,7 +137,7 @@ function Details() {
                                 if (data != " "&&data != ""&&data !=null) {                                
                                 return (
                                   <li className="intList">
-                                    <i class="fa-solid fa-spoon"></i>
+                                    <i className="fa-solid fa-spoon"></i>
                                     {` : ${data}`}g
                                   </li>
                                 );

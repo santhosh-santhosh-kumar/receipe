@@ -1,7 +1,7 @@
 .mainRegister{
     margin: 00px;
     height: 100vh;
-    background-image: url("./assets/wallpaperflare.com_wallpaper\ \(2\).jpg");
+    background-image: url("../assets/wallpaperflare.com_wallpaper\ \(2\).jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,8 +19,6 @@
 .register{
     padding: 70px 0px 0px 150px;
 }
-.registerButton{
-}
 .registerDetails span{
     margin-left: 5px;
     color: rgb(163, 92, 42) !important;
@@ -29,7 +27,7 @@
     margin-left: 250px;
 }
 .register .page p{
-margin-left: 130px;    
+margin-left: 125px;    
 }
 
 .registerButton1,.registerButton{
@@ -37,13 +35,14 @@ margin-left: 130px;
     margin-right: 50px;
     margin-left: 50px;
     font-size: 20px;
-
-}
-.registerButton1{
-    padding: 10px;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgba(0, 0, 0, 0.084);
+    color: white;
 }
 .registerButton{
-    padding: 10px;
+    background-color: chocolate;
+    border: none;
 }
 .registerButton1:hover{
     background-color: black;

@@ -2,13 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import NewItem from "./NewItem.jsx";
+import NewItem from "../NewItem/NewItem.jsx";
 import "./Category.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
-import Meallist from "./Meallist";
-import Recomends from "./Recomends.jsx";
+import { ContextProvide } from "../Context.jsx";
+import Meallist from "./Meallist.jsx";
+import Recomends from "../Recomends/Recomends.jsx";
 
 function Category() {
   const { id } = useParams();
@@ -74,12 +74,12 @@ function Category() {
         <ul>
           <li>
             <Link to={"/Meal"}>
-              <i class="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house"></i>
             </Link>
           </li>
           <li>
-            <i class="fa-solid fa-chevron-right"></i>
-            <i class="fa-solid fa-chevron-right"></i>
+            <i className="fa-solid fa-chevron-right"></i>
+            <i className="fa-solid fa-chevron-right"></i>
           </li>
           <li>
             <h6 className="pageCategory">CATEGORY</h6>
@@ -115,7 +115,7 @@ function Category() {
             return (
               <div className="col-2 categoryCol" key={index}>
                 <div
-                  class="card"
+                  className="card"
                   style={{ width: "1rem !important;", height: "18.5rem" }}
                 >
                   <Link
@@ -124,23 +124,23 @@ function Category() {
                   >
                     <img
                       src={item.strMealThumb}
-                      class="card-img-top"
+                      className="card-img-top"
                       alt="..."
                       style={{ height: "190px", width: "196px" }}
                     />
                   </Link>
                   <i
-                    class="fa-regular fa-bookmark"
+                    className="fa-regular fa-bookmark"
                     onClick={(e) => handleSave(e, item)}
                     style={{ backgroundColor: "black", color: "white" }}
                   ></i>
-                  <div class="card-body">
+                  <div className="card-body">
                     <p className="categoryArea">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-regular fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-regular fa-star"></i>
                     </p>
                     <Link
                       style={{ textDecoration: "none" }}

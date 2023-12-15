@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./Details.css";
+import "../Details/Details.css"
 
 function AddItemDetails() {
   const [list, setList] = useState("Ingredients");
@@ -41,9 +41,9 @@ function AddItemDetails() {
         <p>{fetchError}</p>
       ) : (
         details.map((item) => {
-          const instructArray = item.strInstructions;
-          if (item.mealName == id) {
-            console.log(item.ingredient);
+          console.log(item.MealName,id)
+          const instructArray = item.addIngrediants;
+          if (item.MealName == id) {
             return (
               <>
                 <div className="container navBarDetails">
@@ -52,12 +52,12 @@ function AddItemDetails() {
                       <ul>
                         <li>
                           <Link to={"/Meal"}>
-                            <i class="fa-solid fa-house"></i>
+                            <i className="fa-solid fa-house"></i>
                           </Link>
                         </li>
                         <li>
-                          <i class="fa-solid fa-chevron-right"></i>
-                          <i class="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
                         <Link
@@ -70,8 +70,8 @@ function AddItemDetails() {
 
 
                         <li>
-                          <i class="fa-solid fa-chevron-right"></i>
-                          <i class="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
+                          <i className="fa-solid fa-chevron-right"></i>
                         </li>
                         <li>
                           <h6 className="pageCategory">DETAILS</h6>
@@ -84,7 +84,7 @@ function AddItemDetails() {
                 <div className="container">
                   <div className="row">
                     <div className="col-5">
-                    <span className="detailsTitle">{item.mealName}</span>
+                    <span className="detailsTitle">{item.MealName}</span>
                     </div>
                   </div>
                 </div>
@@ -92,11 +92,12 @@ function AddItemDetails() {
                   <div className="row">
                     <div className="col-4">
                       <img
-                        src={item.imageUrl}
-                        class="card-img-top1"
+                        src={item.image}
+                        alt="receipe image"
+                        className="card-img-top1"
                         style={{ width: "400px", height: "400px" }}
                       />
-                      <i class="fa-regular fa-bookmark fa-bookmark1"></i>
+                      <i className="fa-regular fa-bookmark fa-bookmark1"></i>
                     </div>
                     <div className="col-8">
                       <hr></hr>
@@ -128,17 +129,17 @@ function AddItemDetails() {
                         <div className="Ingredients">
                           <div className="detailList1">
                             <ul>
-                              {item.ingredient.map((data) => {
+                              {/* {item.ingredient.map((data) => {
                                 console.log(data)
                                 if(data!=item.ingredient[item.ingredient.length-1]){
                                   return (
                                     <li>
-                                      <i class="fa-solid fa-check"></i> {data}
+                                      <i className="fa-solid fa-check"></i> {data}
                                     </li>
                                   );
   
                                 }
-                              })}
+                              })} */}
                             </ul>
                           </div>
                         </div>
@@ -148,16 +149,16 @@ function AddItemDetails() {
                         <div className="Measure">
                           <div className="detailList2">
                             <ul>
-                              {item.measure.map((data) => {
+                              {/* {item.measure.map((data) => {
                                 if(data!=item.measure[item.measure.length-1]){
                                   return (
                                     <li className="intList">
-                                      <i class="fa-solid fa-spoon"></i>
+                                      <i className="fa-solid fa-spoon"></i>
                                       {` : ${data}`}
                                     </li>
                                   );
                                 }
-                              })}
+                              })} */}
                             </ul>
                           </div>
                         </div>

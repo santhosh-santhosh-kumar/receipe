@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import axios from "axios";
 import { useContext } from "react";
-import { ContextProvide } from "./Context";
+import { ContextProvide } from "../Context";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -46,7 +46,7 @@ function Profile() {
     <>
       <div className="containerProfile">
         <h1>
-          <i class="fa-solid fa-user"></i>
+          <i className="fa-solid fa-user"></i>
         </h1>
         <h4>USER</h4>
       <div className="containerProfile1">
@@ -59,7 +59,7 @@ function Profile() {
 
       <div className={`notification4 ${logOut ? "notification5":""}`}>
           <p className='sucess'>Do you want to log out</p>
-          <p><i class="fa-solid fa-check"></i></p>
+          <p><i className="fa-solid fa-check"></i></p>
           <span className='close' onClick={handleNavigate}>Conform</span>
           <span className='close' onClick={handleCancel}>Cancel</span>
         </div>

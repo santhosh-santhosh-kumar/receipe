@@ -16,10 +16,7 @@
 }
 
 .addReceipe{
-    /* background-image: url("./assets/max-komthongvijit-_RwtD1MrUrw-unsplash.jpg");
-   background-size: cover;    
-   background-position: center; */
-   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./assets/max-komthongvijit-_RwtD1MrUrw-unsplash.jpg") center/cover no-repeat;
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../assets/max-komthongvijit-_RwtD1MrUrw-unsplash.jpg") center/cover no-repeat;
 
 }
 .col-form-label{

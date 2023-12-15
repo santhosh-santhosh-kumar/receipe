@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route,Routes, useNavigate } from 'react-router-dom';
-import Meal from './Meal';
-import Meallist from './Meallist';
+import Meal from '../HomePage/Meal';
+import Meallist from '../HomePage/Meallist';
 import './Header.css';
 
 
