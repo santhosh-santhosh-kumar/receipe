@@ -6,7 +6,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { ContextProvide } from "../Context";
 import LoginPage from "../Login/LoginPage";
-import { useFormik } from "formik";
+import { useFormik, FieldArray, Field } from "formik";
 
 function AddReceipe() {
   const nav = useNavigate();
@@ -21,7 +21,7 @@ function AddReceipe() {
       author: "",
       Source: "",
       image: "",
-      addIngrediants: {},
+      addIngrediants: [],
       addMeasure: "",
       Instructions: "",
     },
@@ -48,6 +48,7 @@ function AddReceipe() {
       return error;
     },
     onSubmit: async (values) => {
+      console.log(values)
       try {
         await axios.post(
           "https://6557461abd4bcef8b6125cf6.mockapi.io/practice",
@@ -95,7 +96,10 @@ function AddReceipe() {
                 <hr></hr>
                 <form onSubmit={formik.handleSubmit}>
                   <div className="form-group row">
-                    <label htmlFor="Category" className="col-sm-2 col-form-label">
+                    <label
+                      htmlFor="Category"
+                      className="col-sm-2 col-form-label"
+                    >
                       Category
                     </label>
                     <div className="col-sm-8">
@@ -131,7 +135,10 @@ function AddReceipe() {
                   </div>
 
                   <div className="form-group row">
-                    <label htmlFor="MealName" className="col-sm-2 col-form-label">
+                    <label
+                      htmlFor="MealName"
+                      className="col-sm-2 col-form-label"
+                    >
                       MealName
                     </label>
                     <div className="col-sm-8">
@@ -221,25 +228,49 @@ function AddReceipe() {
                           Add Ingrediants
                         </span>
                       </label>
+                      <FieldArray name="addIngrediants">
+                        {({ push, remove }) => {
+                          return (
+                            <div>
+                              {formik.values.addIngrediants.map((feild, i) => {
+                                return (
+                                  <>
+                                    <Field
+                                      type="text"
+                                      className="ingrediants"
+                                      id="addIngrediants"
+                                      value={formik.values.addIngrediants[i]}
+                                      name={`addIngrediants.${i}`}
+                                      onChange={formik.handleChange}
+                                    ></Field>
+                                    <button onClick={() => remove(i)}>
+                                      remove
+                                    </button>
+                                  </>
+                                );
+                              })}
+                              <button onClick={()=>push("")}>add</button>
+                            </div>
+                          );
+                        }}
+                      </FieldArray>
 
                       <br></br>
-                      {value.map((e, i) => {
-                        console.log(e)
+                      {/* {value.map((e, i) => {
                         console.log(formik.values.addIngrediants)
                         return (
-                          <div>
-                            <input
-                              type="text"
-                              className="ingrediants"
-                              id="addIngrediants"
-                              // value={formik.values.addIngrediants}
-                              name="addIngrediants"
-                              onChange={formik.handleChange}
-                              // onChange={(e) => handleChangeIngredient(e, i)}
-                            ></input>
-                          </div>
+                          // <div>
+                          //   <input
+                          //     type="text"
+                          //     className="ingrediants"
+                          //     id="addIngrediants"
+                          //     value={formik.values.addIngrediants}
+                          //     name="addIngrediants"
+                          //     onChange={formik.handleChange}
+                          //   ></input>
+                          // </div>
                         );
-                      })}
+                      })} */}
                     </div>
                     <div className="measure">
                       <label htmlFor="measurments" className="addLabel">

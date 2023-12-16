@@ -6,7 +6,6 @@ import "./Register.css";
 import { useContext } from "react";
 import { ContextProvide } from "../Context";
 import "./login.css";
-import { Params } from "react-router-dom";
 
 function UpdateProfile() {
   const nav = useNavigate();
@@ -33,18 +32,18 @@ useEffect(()=>{
     }
     fetchItems();
 },[])
-
   const formik = useFormik({
     initialValues: {
-      Email: "",
-      Password: "",
-      firstName: "",
-      lastName: "",
-      mobileNumber: "",
-      conformPassword: "",
+      Email: data.Email,
+      Password: data.Password,
+      firstName:data.firstName ,
+      lastName: data.lastName,
+      mobileNumber:data.mobileNumber,
+      conformPassword: data.conformPassword,
     },
     validate: (values) => {
       let error = {};
+      console.log(values.Email)
       if (values.firstName === "") {
         error.firstName = "*Please enter the first name*";
       } else if (values.firstName.length < 4 || values.firstName.length > 25) {
@@ -102,15 +101,15 @@ useEffect(()=>{
         );
         nav("/Meal");
       } catch (error) {
-        console.log(error);
+        alert(error.message)
       }
     },
   });
-//   const handleNavigate = () => {
-//     nav("/Meal");
-//   };
-  
 
+  const handleNavigate = () => {
+    nav("/Meal");
+  };
+  
   return (
     <>
       <div className="mainRegister">
@@ -128,7 +127,7 @@ useEffect(()=>{
                     type="text"
                     name="firstName"
                     onChange={formik.handleChange}
-                    value={data.firstName}
+                    value={formik.values.firstName}
                     placeholder="First name"
                   ></input>
                   <span style={{ color: "red" }}>
@@ -140,7 +139,7 @@ useEffect(()=>{
                     type="text"
                     name="lastName"
                     onChange={formik.handleChange}
-                    value={data.lastName}
+                    value={formik.values.lastName}
                     placeholder="Last name"
                   ></input>
                   <span style={{ color: "red" }}>{formik.errors.lastName}</span>
@@ -150,7 +149,7 @@ useEffect(()=>{
                     type="text"
                     name="mobileNumber"
                     onChange={formik.handleChange}
-                    value={data.mobileNumber}
+                    value={formik.values.mobileNumber}
                     placeholder="Mobile number"
                   ></input>
                   <span style={{ color: "red" }}>

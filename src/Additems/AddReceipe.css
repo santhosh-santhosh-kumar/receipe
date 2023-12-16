@@ -8,7 +8,6 @@
 .commends{
     margin-left: 200px;
     background-color: rgba(0, 0, 0, 0);
-    color: white;
     font-size: 20px;
 }
 .combine{
@@ -17,7 +16,6 @@
 
 .addReceipe{
    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../assets/max-komthongvijit-_RwtD1MrUrw-unsplash.jpg") center/cover no-repeat;
-
 }
 .col-form-label{
     margin-left: 220px;
@@ -29,7 +27,6 @@
 }
 .addReceipeButton{
     border: none;
-    color: white;
     font-size: 20px;
     padding: 10px 30px 30px 30px;
     border-radius: 10px;
@@ -41,11 +38,11 @@
     display: flex;
 }
 hr{
-    color: white;
     height: 30px;
 }
 .containerAdd{
     padding-bottom: 30px;
+    background-color: whitesmoke;
 }
 .IngrediantsButton{
     background-color: chocolate;
@@ -62,20 +59,13 @@ hr{
     margin-left: 83px;
     border-radius: 5px;
 }
-.containerAdd input{
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid white;
-    color: whitesmoke;
-}
+
 .containerAdd label{
-    color: whitesmoke;
     font-size: 20px;
 }
 
 
-.title h4{
-    color: whitesmoke;
-}
+
 .ingrediants{
     margin:20px 0px 0px 220px;
     width: 500px;
@@ -85,7 +75,7 @@ hr{
     margin-left: 20px;
 }
 .notification2{
-    background-color: whitesmoke;
+    background-color:black;
     position: absolute;
     width: 350px;
     padding: 30px;
@@ -97,7 +87,7 @@ hr{
 }
 .notification3{
     display: block;
-    background-color: whitesmoke;
+    background-color:black;
     position: absolute;
     width: 350px;
     padding: 30px;
