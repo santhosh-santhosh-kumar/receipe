@@ -72,7 +72,7 @@ hr{
     height: 40px;
 }
 .notification2 .itemNoti{
-    margin-left: 20px;
+    margin-left: 50px;
 }
 .notification2{
     background-color:black;
@@ -101,6 +101,7 @@ hr{
 .notification2 p{
     margin-left: 80px;
     margin-bottom: 30px;
+    color: white;
   }
   .notification2 .close{
       margin-left: 80px;
@@ -123,4 +124,15 @@ hr{
   }
   select{
     width: 200px;
+  }
+  .fa-plus,.fa-xmark{
+    background-color: black;
+    color: chocolate;
+    padding: 7px;
+    margin-top: 5px;
+    border-radius: 100%;
+  }
+  .fa-xmark{
+    margin-left: 10px;
+    margin-right: 10px;
   }

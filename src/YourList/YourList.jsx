@@ -15,40 +15,37 @@ function YourList() {
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
   const [newItem, setNewItem] = useState([]);
+  const fetchItems = async () => {
+    try {
+      const response = await axios.get(
+        "https://6557461abd4bcef8b6125cf6.mockapi.io/practice"
+      );
+      if (response.data == null) {
+        throw Error("No Items");
+      }
+      setNewItem(response.data);
+      setFetchError(null);
+    } catch (err) {
+      setFetchError(err.message);
+    } finally {
+      setLoad(false);
+    }
+
+  };
 
   useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const response = await axios.get(
-          "https://6557461abd4bcef8b6125cf6.mockapi.io/practice"
-        );
-        if (response.data == null) {
-          throw Error("No Items");
-        }
-        setNewItem(response.data);
-        setFetchError(null);
-      } catch (err) {
-        setFetchError(err.message);
-        console.log(newItem.length)
-
-      } finally {
-        setLoad(false);
-      }
-
-    };
     fetchItems();
   }, [newItem]);
 
   const handleDelete = async (id) => {
     try {
-      const updateNewItems = newItem.filter((e) => e.id !== id);
-      setNewItem(updateNewItems);
       const response = await axios.delete(
         "https://6557461abd4bcef8b6125cf6.mockapi.io/practice/" + id
       );
       if (response.data == null) {
         throw Error("no items found");
       }
+      fetchItems();
     } catch (err) {
       
     }

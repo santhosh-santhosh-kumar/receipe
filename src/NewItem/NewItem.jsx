@@ -31,7 +31,6 @@ function NewItem() {
     <>
             {
                 newItem.map((item) => {
-                console.log(item.image)
                     if(item.Category.toLowerCase()==id.toLowerCase()){
                 return (
                   <div className="col-2 categoryCol newItemCol">

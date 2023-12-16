@@ -25,7 +25,6 @@ function Profile() {
           }
         });
       } catch (error) {
-        alert("Smothing went wrong please login again");
       }
     };
     fetchItem();
@@ -45,6 +44,10 @@ function Profile() {
   return (
     <>
       <div className="containerProfile">
+        <br></br>
+        <br></br>
+        <br></br>
+        <div className="pro">
         <h1>
           <i className="fa-solid fa-user"></i>
         </h1>
@@ -63,7 +66,7 @@ function Profile() {
           </Link>
         </div>
       </div>
-
+      </div>
       <div className={`notification4 ${logOut ? "notification5" : ""}`}>
         <p className="sucess">Do you want to log out</p>
         <p>

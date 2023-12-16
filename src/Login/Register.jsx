@@ -77,10 +77,9 @@ function Register() {
           "https://6557461abd4bcef8b6125cf6.mockapi.io/user",
           values
         );
-        alert("hello");
         nav("/Meal");
       } catch (error) {
-        console.log(error);
+        alert("Register error")
       }
     },
   });
@@ -90,6 +89,8 @@ function Register() {
   return (
     <>
       <div className="mainRegister">
+        <br></br>
+        <br></br>
         <div className="register">
           <div className="page">
             <i className="fa-solid fa-user"></i>

@@ -16,15 +16,15 @@ function LoginPage() {
     <>
       { <div className="loginMain">
         <div className="loginPage">
+          <div className="back">
             <div className="page">
             <i className="fa-solid fa-user"></i>
             <p>Login</p>
-            {/* <h5 onClick={() => setView("Login")}>Login</h5>
-          <h5 onClick={() => setView("Register")}>Register</h5>                 */}
             </div>
             <div className="pages">
             {view == "Login" ? <Login user={user} setUser={setUser} /> : <Register />}
             </div>
+        </div>
         </div>
       </div>}
     </>

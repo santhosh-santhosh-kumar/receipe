@@ -9,6 +9,7 @@
 
 .loginPage{
     padding: 150px 500px 0px 400px;
+    
 }
 .page i{
     font-size: 80px;
@@ -21,4 +22,10 @@
  color: white;
  margin: 0px 0px 40px 133px;
 
+}
+.back{
+    background-color: rgba(0, 0, 0, 0.409);
+    width: 400px;
+    padding: 30px 0px 30px 50px;
+    border-radius: 10px;
 }

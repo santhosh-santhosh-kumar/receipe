@@ -21,6 +21,7 @@ function AddItemDetails() {
           throw Error("Items not found");
         }
         setDetails(response.data);
+        console.log(details)
         setFetchError(null);
       } catch (err) {
         setFetchError(err.message);
@@ -37,7 +38,6 @@ function AddItemDetails() {
         <p>{fetchError}</p>
       ) : (
         details.map((item) => {
-          console.log(item.MealName,id)
           const instructArray = item.addIngrediants;
           if (item.MealName == id) {
             return (
@@ -124,17 +124,13 @@ function AddItemDetails() {
                         <div className="Ingredients">
                           <div className="detailList1">
                             <ul>
-                              {/* {item.ingredient.map((data) => {
-                                console.log(data)
-                                if(data!=item.ingredient[item.ingredient.length-1]){
+                              {item.addIngrediants.map((data) => {
                                   return (
                                     <li>
                                       <i className="fa-solid fa-check"></i> {data}
                                     </li>
                                   );
-  
-                                }
-                              })} */}
+                              })}
                             </ul>
                           </div>
                         </div>
@@ -144,23 +140,21 @@ function AddItemDetails() {
                         <div className="Measure">
                           <div className="detailList2">
                             <ul>
-                              {/* {item.measure.map((data) => {
-                                if(data!=item.measure[item.measure.length-1]){
+                              {item.addMeasure.map((data) => {
                                   return (
                                     <li className="intList">
                                       <i className="fa-solid fa-spoon"></i>
                                       {` : ${data}`}
                                     </li>
                                   );
-                                }
-                              })} */}
+                              })}
                             </ul>
                           </div>
                         </div>
                       )}
                       {list == "Instructions" && (
                         <div className="instruct">
-                          <p>{item.instruction}</p>
+                          <p>{item.Instructions}</p>
                         </div>
                       )}
                     </div>

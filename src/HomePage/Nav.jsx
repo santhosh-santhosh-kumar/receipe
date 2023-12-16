@@ -11,6 +11,7 @@ function Nav() {
     useContext(ContextProvide);
     const [count,setCount]=useState("")
   const [userName,setUserName]=useState("")
+  const [details,setDetails]=useState("")
     useEffect(() => {
       const fetchItem = async () => {
         try {
@@ -24,7 +25,7 @@ function Nav() {
             }
           });
         } catch (error) {
-          alert("Smothing went wrong please login again");
+          console.log(error.message)
         }
       };
       fetchItem();
@@ -47,6 +48,23 @@ function Nav() {
       fetchItems();
     },[]);
   
+    useEffect(() => {
+      const fetchItems = async () => {
+        try {
+          const response = await axios.get(
+            `https://657650fa0febac18d403d1fc.mockapi.io/login`
+          );
+          if (response.data == null) {
+            throw Error("Items not found");
+          }
+          setDetails(response.data);
+        } catch (err) {
+        } finally {
+        }
+      };
+      fetchItems();
+    }, []);
+  
   
   return (
     <>
@@ -68,13 +86,13 @@ function Nav() {
                 <li>
                   {" "}
                   <Link to={"/yourList"} className="nav-link" href="#">
-                    Your Receipe {login && <span>({count.length})</span>}
+                    Your Receipe {login && <span className="count">{count.length}</span>}
                   </Link>
                 </li>
                 <li>
                   {" "}
                   <Link to={"/saved"} className="nav-link" href="#">
-                    Saved{login && <span>({count.length})</span>}
+                    Saved{login && <span className="count">{details.length}</span>}
                   </Link>
                 </li>
                 <li>

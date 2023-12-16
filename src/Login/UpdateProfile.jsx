@@ -10,7 +10,6 @@ import "./login.css";
 function UpdateProfile() {
   const nav = useNavigate();
   const {id}=useParams()
-  console.log(id)
   const [data,setData]=useState([])
   const [item, setItem, login, setLogin, user, setUser] =
     useContext(ContextProvide);
@@ -25,6 +24,7 @@ useEffect(()=>{
                 throw Error("something went wrong")
             }
            setData(response.data)
+           formik.setValues(response.data)
         }catch(error){
             alert(error.message)
          }
@@ -34,12 +34,12 @@ useEffect(()=>{
 },[])
   const formik = useFormik({
     initialValues: {
-      Email: data.Email,
-      Password: data.Password,
-      firstName:data.firstName ,
-      lastName: data.lastName,
-      mobileNumber:data.mobileNumber,
-      conformPassword: data.conformPassword,
+      Email: "",
+      Password: "",
+      firstName:"",
+      lastName: "",
+      mobileNumber:"",
+      conformPassword: "",
     },
     validate: (values) => {
       let error = {};
@@ -193,28 +193,14 @@ useEffect(()=>{
             <ul className="registerUl">
               <li>
                 <button type="submit" className="registerButton">
-                  Register
+                  Update
                 </button>
-              </li>
-              <li>
-                <Link to={"/login"} style={{ textDecoration: "none" }}>
-                  <button className="registerButton1">Login</button>
-                </Link>
               </li>
             </ul>
           </form>
         </div>
       </div>
 
-      {/* <div className={`notification ${login ? "notification1" : ""}`}>
-        <p className="sucess">successfully</p>
-        <p>
-          <i className="fa-solid fa-check"></i>
-        </p>
-        <span className="close" onClick={handleNavigate}>
-          Continue
-        </span>
-      </div> */}
     </>
   );
 }

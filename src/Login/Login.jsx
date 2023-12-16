@@ -40,7 +40,7 @@ function Login() {
                         passwordOk=true;
                     }})
             }catch(error){
-                alert("Smothing went wrong please login again")
+                alert("Smothing went wrong")
             }
             if(passwordOk==false){
               alert('Wrong password')

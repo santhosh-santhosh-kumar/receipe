@@ -1,5 +1,5 @@
 import React from "react";
-import "../Additems/AddReceipe.css"
+import "../Additems/AddReceipe.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -16,8 +16,8 @@ function UpdateItem() {
     author: "",
     Source: "",
     image: "",
-    addIngredient: "",
-    measure: "",
+    addIngrediants: [],
+    addMeasure: [],
     Instructions: "",
   });
   const [fetchError, setFetchError] = useState(null);
@@ -34,8 +34,8 @@ function UpdateItem() {
           throw Error("Items not found");
         }
         setInputData(response.data);
-        setValue([...value,...response.data.ingredient])
-        setMeasurement([...measurement,...response.data.measure])
+        setValue([...value, ...response.data.addIngrediants]);
+        setMeasurement([...measurement, ...response.data.addMeasure]);
         setFetchError(null);
       } catch (err) {
         setFetchError(err.message);
@@ -45,7 +45,6 @@ function UpdateItem() {
     };
     fetchItems();
   }, []);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.put(
@@ -54,7 +53,6 @@ function UpdateItem() {
     );
     nav("/yourlist");
   };
-
   function addInputTg() {
     let value1 = [...value, []];
     setValue(value1);
@@ -68,15 +66,14 @@ function UpdateItem() {
     const data = [...value];
     data[i] = element.target.value;
     setValue(data);
-    setInputData({ ...inputData, ingredient: value });
+    setInputData({ ...inputData, addIngrediants: value });
   }
   function handleChangeMeasure(element, i) {
     const data = [...measurement];
     data[i] = element.target.value;
     setMeasurement(data);
-    setInputData({ ...inputData, measure: measurement });
+    setInputData({ ...inputData, addMeasure: measurement });
   }
-
 
   return (
     <>
@@ -213,61 +210,45 @@ function UpdateItem() {
                   <label htmlFor="ingrediants" className="addLabel">
                     Ingrediants
                     <span className="IngrediantsButton" onClick={addInputTg}>
-                        Add Ingrediants
-                      </span>
-                    
+                      Add Ingrediants
+                    </span>
                   </label>
 
-
-       
-{value.map((e, i) => {
-                      return (
-                        <div>
-                          <input
-                            type="text"
-                            className="ingrediants"
-                            value={e}
-                            id="ingrediants"
-                            onChange={(e) => handleChangeIngredient(e, i)}
-                          ></input>
-                        </div>
-                      );
-                    })}
-
+                  {value.map((e, i) => {
+                    return (
+                      <div>
+                        <input
+                          type="text"
+                          className="ingrediants"
+                          value={e}
+                          id="ingrediants"
+                          onChange={(e) => handleChangeIngredient(e, i)}
+                        ></input>
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className="measure">
                   <label htmlFor="measurments" className="addLabel">
                     Measurements
-                    <span
-                        className="IngrediantsButton1"
-                        onClick={addMeasureTg}
-                      >
-                        Add Measure
-                      </span>
-                 
+                    <span className="IngrediantsButton1" onClick={addMeasureTg}>
+                      Add Measure
+                    </span>
                   </label>
-                 
-                 
-                 
-                  {measurement.map((e, i) => {
-                      return (
-                        <div>
-                          <input
-                            type="text"
-                            className="ingrediants"
-                            id="measure1"
-                            value={e}
-                            onChange={(e) => handleChangeMeasure(e, i)}
-                          ></input>
-                        </div>
-                      );
-                    })}
 
-                 
-                 
-                 
-                 
-                 
+                  {measurement.map((e, i) => {
+                    return (
+                      <div>
+                        <input
+                          type="text"
+                          className="ingrediants"
+                          id="measure1"
+                          value={e}
+                          onChange={(e) => handleChangeMeasure(e, i)}
+                        ></input>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <label htmlFor="Instructions" className="addTextArea">
@@ -283,7 +264,7 @@ function UpdateItem() {
                   cols={100}
                   name="Instructions"
                   onChange={(e) =>
-                    setInputData({ ...inputData, instruction: e.target.value })
+                    setInputData({ ...inputData, Instructions: e.target.value })
                   }
                 ></textarea>
                 <button className="addReceipeButton">Update</button>

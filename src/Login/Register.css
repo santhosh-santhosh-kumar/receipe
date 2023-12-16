@@ -60,3 +60,10 @@ margin-left: 125px;
     margin-top: 80px;
     list-style-type: none;
 }
+.register{
+    background-color: rgba(0, 0, 0, 0.342);
+    width: 800px;
+    margin-left: 100px;
+    padding: 40px 40px 40px 0px;
+    border-radius: 20px;
+}
