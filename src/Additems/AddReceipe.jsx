@@ -47,7 +47,7 @@ function AddReceipe() {
                     if (values.MealName == "") {
                       error.MealName = "*Required";
                     }else if (values.MealName.length < 4 || values.MealName.length > 25) {
-                      error.firstName =
+                      error.MealName =
                         "*Meal name should be above 3 chars and below 25 chars*";
                     } else if (!/^[A-Za-z ]*$/.test(values.MealName)) {
                       error.MealName = "*Meal name should be in chars*";
@@ -66,7 +66,6 @@ function AddReceipe() {
                     if (values.Instructions == "") {
                       error.Instructions = "Required";
                     }
-                    console.log(error)
                     return error;
                   }
                 }

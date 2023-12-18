@@ -56,7 +56,7 @@ function Login() {
     <div className='login'>
         <div className='signUp'>            
             <form onSubmit={formik.handleSubmit}>
-                <input type='text' name='Email' value={formik.values.Email} onChange={formik.handleChange} placeholder='Username'></input><br></br>
+                <input type='text' name='Email' value={formik.values.Email} onChange={formik.handleChange} placeholder='Email'></input><br></br>
                 <span style={{color:"red"}}>{formik.errors.Email}</span><br></br>
                 <input type='text' name='Password' value={formik.values.Password} onChange={formik.handleChange} placeholder='Password'></input><br></br>
                 <span style={{color:"red"}}>{formik.errors.Password}</span><br></br>

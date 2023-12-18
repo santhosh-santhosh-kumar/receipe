@@ -13,6 +13,7 @@ function Details() {
   const [list, setList] = useState("Ingredients");
   const [details, setDetails] = useState([]);
   let { id } = useParams();
+  console.log(id)
   const [fetchError, setFetchError] = useState(null);
   const [load, setLoad] = useState(true);
   useEffect(() => {
@@ -34,7 +35,6 @@ function Details() {
     };
     fetchItems();
   }, []);
-  console.log(fetchError)
   return (
     <>
       {load && <p>Loading...</p>}

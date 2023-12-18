@@ -21,7 +21,6 @@ function AddItemDetails() {
           throw Error("Items not found");
         }
         setDetails(response.data);
-        console.log(details)
         setFetchError(null);
       } catch (err) {
         setFetchError(err.message);
@@ -39,7 +38,10 @@ function AddItemDetails() {
       ) : (
         details.map((item) => {
           const instructArray = item.addIngrediants;
-          if (item.MealName == id) {
+          console.log(id)
+          let nameMeal=id.slice(0,id.length)
+          console.log(nameMeal)
+          if (item.id == nameMeal) {
             return (
               <>
                 <div className="container navBarDetails">
