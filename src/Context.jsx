@@ -3,6 +3,7 @@ import { createContext } from 'react';
 import axios from 'axios';
 
 export const ContextProvide=createContext()
+
 export function Context(props) {
   const [user,setUser]=useState({})
   const [item,setItem]=useState([])
@@ -10,6 +11,7 @@ export function Context(props) {
   const [fetchError, setFetchError] = useState(null);
   const [load,setLoad]=useState(true)
   const [login,setLogin]=useState(false)
+
   useEffect(()=>{
     const fetchItems = async () => {
       try {
@@ -39,3 +41,4 @@ export function Context(props) {
   )
 }
 
+    

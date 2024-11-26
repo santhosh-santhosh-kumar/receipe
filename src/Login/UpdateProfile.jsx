@@ -96,7 +96,7 @@ useEffect(()=>{
     onSubmit: async (values) => {
     try {
         await axios.put(
-          "https://6557461abd4bcef8b6125cf6.mockapi.io/user/"+id,
+          "https://server-isn0.onrender.com/user/"+id,
           values
         );
         nav("/Meal");

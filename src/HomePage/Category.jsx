@@ -12,7 +12,6 @@ import Recomends from "../Recomends/Recomends.jsx";
 
 function Category() {
   const { id } = useParams();
-  console.log(id)
   const [item, setItem, login, setLogin, user, setUser] =useContext(ContextProvide);
   const nav = useNavigate();
   const [fetchError, setFetchError] = useState(null);
@@ -31,6 +30,7 @@ function Category() {
         const response = await axios.get(
           `https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`
         );
+        console.log(response.data)
         if (response.data.meals == null) {
           throw Error("Items not found");
         }
@@ -158,7 +158,7 @@ function Category() {
             );
           })}
         </div>
-<Recomends />
+{/* <Recomends /> */}
       </div>
     </>
   );

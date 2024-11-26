@@ -31,7 +31,7 @@ function NewItem() {
     <>
             {
                 newItem.map((item) => {
-                    if(item.Category.toLowerCase()==id.toLowerCase()){
+                    if(item.Category==id){
                 return (
                   <div className="col-2 categoryCol newItemCol">
                     <div
@@ -62,7 +62,7 @@ function NewItem() {
                           <i className="fa-regular fa-star"></i>
                         </p>
                             <p className="categoryCard">
-                            {item.MealName.length > 19
+                            {item.MealName.length > 30
                               ? item.MealName.slice(0, 19)
                               : item.MealName}
                           </p>
